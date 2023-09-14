@@ -1,32 +1,32 @@
-'use client';
-import { Combobox } from '@components/Combobox';
+"use client";
+import { Combobox } from "@components/Combobox";
 import {
   FormControlComponent,
   FormControlContext,
   FormControlProps,
-} from '@components/FormControl/FormControl.types';
-import { FormControlLabel } from '@components/FormControl/FormControlLabel/FormControlLabel';
-import { FormControlText } from '@components/FormControl/FormControlText/FormControlText';
-import { Input } from '@components/Input';
-import { InputGroup } from '@components/InputGroup';
-import { Select } from '@components/Select';
-import { Textarea } from '@components/Textarea';
-import { useComponentTheme } from '@theme/theme.context';
-import { usePropId } from '@utils/usePropId';
-import { forwardRef, Ref, useMemo } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { FormControlContextProvider } from './FormControl.context';
+} from "@components/FormControl/FormControl.types";
+import { FormControlLabel } from "./FormControlLabel/FormControlLabel";
+import { FormControlText } from "./FormControlText/FormControlText";
+import { Input } from "../Input";
+import { InputGroup } from "@components/InputGroup";
+import { Select } from "@components/Select";
+import { Textarea } from "@components/Textarea";
+import { useComponentTheme } from "@theme/theme.context";
+import { usePropId } from "@utils/usePropId";
+import { forwardRef, Ref, useMemo } from "react";
+import { twMerge } from "tailwind-merge";
+import { FormControlContextProvider } from "./FormControl.context";
 
 const defaultProps: Partial<FormControlProps> = {
-  size: 'md',
-  validation: 'none',
+  size: "md",
+  validation: "none",
 };
 
 const _FormControl: FormControlComponent = forwardRef(
   (props: FormControlProps, ref?: Ref<HTMLDivElement>) => {
-    const theme = useComponentTheme('FormControl');
+    const theme = useComponentTheme("FormControl");
     const {
-      className = '',
+      className = "",
       children,
       size,
       validation,
@@ -52,7 +52,7 @@ const _FormControl: FormControlComponent = forwardRef(
   }
 );
 
-_FormControl.displayName = 'FormControl';
+_FormControl.displayName = "FormControl";
 
 const FormControl = Object.assign(_FormControl, {
   Label: FormControlLabel,

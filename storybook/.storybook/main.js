@@ -22,7 +22,7 @@ module.exports = {
         alias: [
           {
             find: 'ts-rus-ui',
-            replacement: path.resolve(__dirname, '../src/'),
+            replacement: path.resolve(__dirname, '../'),
           },
         ],
       },

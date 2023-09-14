@@ -1,4 +1,4 @@
-import commonjs from '@rollup/plugin-commonjs';
+// import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
@@ -45,9 +45,10 @@ export default [
       },
       {
         dir: 'dist',
-        format: 'esm',
+        format: 'es',
         ...outputOptions,
       },
+        // { file: "dist/index.d.ts", format: "esm" }
     ],
     external: [
       'react',
@@ -63,7 +64,7 @@ export default [
     plugins: [
       peerDepsExternal(),
       resolve(),
-      commonjs(),
+      // commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
         exclude: ['**/stories/**', '**/tests/**', './styles.css'],

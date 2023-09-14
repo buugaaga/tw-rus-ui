@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef } from 'react';
+import { RefObject, useEffect, useRef } from "react";
 
 export function useFade(props: {
   enabled?: boolean;
@@ -14,7 +14,7 @@ export function useFade(props: {
     visible,
     fadeInDuration = 250,
     fadeOutDuration = 250,
-    easing = 'linear',
+    easing = "linear",
   } = props;
 
   const mounted = useRef<boolean>(false);
@@ -27,7 +27,7 @@ export function useFade(props: {
       return;
     }
 
-    element.style.display = 'flex';
+    element.style.display = "flex";
 
     if (!mounted.current) {
       mounted.current = true;
@@ -39,7 +39,7 @@ export function useFade(props: {
     const options: KeyframeAnimationOptions = {
       duration: enabled ? duration : 0,
       easing,
-      fill: 'forwards',
+      fill: "forwards",
     };
 
     // Cancel previous animation
@@ -47,7 +47,10 @@ export function useFade(props: {
       animationRef.current.cancel();
     }
 
-    const keyframes = [{ opacity: visible ? 0 : 1 }, { opacity: visible ? 1 : 0 }];
+    const keyframes = [
+      { opacity: visible ? 0 : 1 },
+      { opacity: visible ? 1 : 0 },
+    ];
 
     animationRef.current = element.animate(keyframes, options);
 
@@ -68,7 +71,7 @@ export function useFade(props: {
         return;
       }
 
-      ref.current.style.display = visible ? 'flex' : 'none';
+      ref.current.style.display = visible ? "flex" : "none";
     };
   }, [animationRef, ref, visible]);
 

@@ -1,6 +1,5 @@
 import {
   Button,
-  ToastContainer,
   Toast,
   useToast,
   ToastPosition,
@@ -107,7 +106,6 @@ const DefaultTemplate: Story<any> = (args) => {
 
   return (
     <View prop="Default">
-      <ToastContainer {...args} />
       <Button onClick={() => setCounter((prev) => prev + 1)}>Add</Button>
       <Button onClick={() => toast.clear()}>Clear</Button>
     </View>
@@ -141,7 +139,6 @@ export const Variants = VariantTemplate.bind({});
 const ColorTemplate: Story<any> = (args) => {
   const items = colors.map((color) => (
     <React.Fragment key={color}>
-      <ToastContainer {...args} />
       <View prop="color" value={color}>
         {tones.map((tone) => (
           <Toast
@@ -169,7 +166,6 @@ export const Colors = ColorTemplate.bind({});
 const RadiusTemplate: Story<any> = (args) => {
   const items = radiuses.map((radius) => (
     <React.Fragment key={radius}>
-      <ToastContainer {...args} />
       <View prop="radius" value={radius}>
         <Toast
           {...args}
@@ -194,7 +190,6 @@ export const Radiuses = RadiusTemplate.bind({});
 const ShadowTemplate: Story<any> = (args) => {
   const items = shadows.map((shadow) => (
     <React.Fragment key={shadow}>
-      <ToastContainer {...args} />
       <View prop="shadow" value={shadow}>
         {tones.map((tone) => (
           <Toast
@@ -222,7 +217,6 @@ export const Shadows = ShadowTemplate.bind({});
 const ShadowColorTemplate: Story<any> = (args) => {
   const items = colors.map((color) => (
     <React.Fragment key={color}>
-      <ToastContainer {...args} />
       <View prop="shadowColor" value={color}>
         {shadows.map((shadow) => (
           <Toast

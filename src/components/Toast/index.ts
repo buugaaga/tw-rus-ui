@@ -1,6 +1,5 @@
-export { default as Toast } from './Toast';
-export { useToast } from './use-toast.hook';
-export { default as ToastContainer } from './ToastContainer/ToastContainer';
+export { default as Toast } from "./Toast";
+export { useToast } from "./use-toast.hook";
 export type {
   ToastAction,
   ToastProps,
@@ -11,5 +10,4 @@ export type {
   ToastRadius,
   ToastIconType,
   ToastVariant,
-} from './Toast.types';
-export type { ToastPosition } from './ToastContainer/ToastContainer.types';
+} from "./Toast.types";
