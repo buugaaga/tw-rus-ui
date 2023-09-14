@@ -1,11 +1,11 @@
-import { Button } from '@rewind-ui/core';
-import { useFade } from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { View, ViewGroup } from '../components/View';
+import { Button } from "tw-rus-ui";
+import { useFade } from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { View, ViewGroup } from "../components/View";
 
 const meta: Meta = {
-  title: 'Hooks/Fade',
+  title: "Hooks/Fade",
   argTypes: {
     ref: {
       table: {
@@ -14,7 +14,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -46,9 +46,18 @@ const DefaultTemplate: Story<null> = (args) => {
       </View>
 
       <View prop="Example">
-        <div ref={redRef} className="w-20 h-20 rounded bg-red-500 flex shadow" />
-        <div ref={greenRef} className="w-20 h-20 rounded bg-green-500 flex shadow" />
-        <div ref={blueRef} className="w-20 h-20 rounded bg-blue-500 flex shadow" />
+        <div
+          ref={redRef}
+          className="w-20 h-20 rounded bg-red-500 flex shadow"
+        />
+        <div
+          ref={greenRef}
+          className="w-20 h-20 rounded bg-green-500 flex shadow"
+        />
+        <div
+          ref={blueRef}
+          className="w-20 h-20 rounded bg-blue-500 flex shadow"
+        />
       </View>
     </ViewGroup>
   );

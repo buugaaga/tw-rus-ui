@@ -5,31 +5,31 @@ import {
   OverlayColor,
   OverlayOpacity,
   OverlayProps,
-} from '@rewind-ui/core';
-import { Meta, Story } from '@storybook/react';
-import { useState } from 'react';
-import * as React from 'react';
-import { View } from '../components/View';
+} from "tw-rus-ui";
+import { Meta, Story } from "@storybook/react";
+import { useState } from "react";
+import * as React from "react";
+import { View } from "../components/View";
 
-const blurs: OverlayBlur[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
-const colors: OverlayColor[] = ['white', 'gray', 'dark'];
-const opacities: OverlayOpacity[] = ['25', '50', '75'];
+const blurs: OverlayBlur[] = ["none", "sm", "base", "md", "lg", "xl"];
+const colors: OverlayColor[] = ["white", "gray", "dark"];
+const opacities: OverlayOpacity[] = ["25", "50", "75"];
 
 const meta: Meta = {
-  title: 'Components/Overlay',
+  title: "Components/Overlay",
   component: Overlay,
   argTypes: {
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     blur: {
       options: blurs,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     opacity: {
       options: opacities,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     ref: {
       table: {
@@ -38,7 +38,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -50,7 +50,9 @@ const DefaultTemplate: Story<OverlayProps> = (args) => {
   return (
     <View prop="Default">
       <Button onClick={() => setOpen(!open)}>Click me!</Button>
-      {open && <Overlay onClose={() => setOpen(false)} closeOnClick={true} {...args} />}
+      {open && (
+        <Overlay onClose={() => setOpen(false)} closeOnClick={true} {...args} />
+      )}
     </View>
   );
 };

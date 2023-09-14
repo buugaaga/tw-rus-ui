@@ -10,72 +10,77 @@ import {
   ComboboxShadow,
   ComboboxValidation,
   ComboboxGroupType,
-} from '@rewind-ui/core';
-import { MagnifyingGlass } from '@phosphor-icons/react';
-import { Meta, Story } from '@storybook/react';
-import * as React from 'react';
+} from "tw-rus-ui";
+import { MagnifyingGlass } from "@phosphor-icons/react";
+import { Meta, Story } from "@storybook/react";
+import * as React from "react";
 
-const tones: ComboboxTone[] = ['light', 'solid', 'transparent'];
-const colors: ComboboxColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
-const sizes: ComboboxSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: ComboboxRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
-const shadows: ComboboxShadow[] = ['none', 'sm', 'base', 'md', 'lg'];
-const validations: ComboboxValidation[] = ['none', 'invalid', 'valid', 'warning'];
+const tones: ComboboxTone[] = ["light", "solid", "transparent"];
+const colors: ComboboxColor[] = ["blue", "purple", "gray", "dark", "black"];
+const sizes: ComboboxSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: ComboboxRadius[] = ["none", "sm", "base", "md", "lg"];
+const shadows: ComboboxShadow[] = ["none", "sm", "base", "md", "lg"];
+const validations: ComboboxValidation[] = [
+  "none",
+  "invalid",
+  "valid",
+  "warning",
+];
 
 const simpleOptions: ComboboxGroupType[] = [
   {
-    heading: 'Europe',
+    heading: "Europe",
     options: [
       {
-        value: '1',
-        label: 'Germany',
+        value: "1",
+        label: "Germany",
       },
       {
-        value: '2',
-        label: 'Great Britain',
+        value: "2",
+        label: "Great Britain",
       },
       {
-        value: '3',
-        label: 'Greece',
+        value: "3",
+        label: "Greece",
       },
       {
-        value: '4',
-        label: 'Sweden',
+        value: "4",
+        label: "Sweden",
       },
     ],
   },
   {
-    heading: 'Asia',
+    heading: "Asia",
     options: [
       {
-        value: '5',
-        label: 'Japan',
+        value: "5",
+        label: "Japan",
       },
       {
-        value: '6',
-        label: 'China',
+        value: "6",
+        label: "China",
       },
       {
-        value: '7',
-        label: 'India',
+        value: "7",
+        label: "India",
         disabled: true,
       },
     ],
   },
   {
-    heading: 'America',
+    heading: "America",
     options: [
       {
-        value: '8',
-        label: 'United States',
+        value: "8",
+        label: "United States",
       },
       {
-        value: '9',
-        label: 'Canada',
+        value: "9",
+        label: "Canada",
       },
       {
-        value: '10',
-        label: 'Mexico',
+        value: "10",
+        label: "Mexico",
       },
     ],
   },
@@ -83,12 +88,12 @@ const simpleOptions: ComboboxGroupType[] = [
 
 const options: ComboboxGroupType[] = [
   {
-    heading: 'Europe',
+    heading: "Europe",
     options: [
       {
-        value: '1',
-        label: 'Germany',
-        description: 'The second-most populous country in Europe',
+        value: "1",
+        label: "Germany",
+        description: "The second-most populous country in Europe",
         media: (
           <Image
             alt="Germany"
@@ -98,9 +103,9 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '2',
-        label: 'Great Britain',
-        description: 'An island nation in northwestern Europe',
+        value: "2",
+        label: "Great Britain",
+        description: "An island nation in northwestern Europe",
         media: (
           <Image
             alt="Great Britain"
@@ -110,9 +115,9 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '3',
-        label: 'Greece',
-        description: 'The cradle of Western civilization',
+        value: "3",
+        label: "Greece",
+        description: "The cradle of Western civilization",
         media: (
           <Image
             alt="Greece"
@@ -122,9 +127,9 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '4',
-        label: 'Sweden',
-        description: 'An economic powerhouse',
+        value: "4",
+        label: "Sweden",
+        description: "An economic powerhouse",
         media: (
           <Image
             alt="Greece"
@@ -136,12 +141,12 @@ const options: ComboboxGroupType[] = [
     ],
   },
   {
-    heading: 'Asia',
+    heading: "Asia",
     options: [
       {
-        value: '5',
-        label: 'Japan',
-        description: 'An island country in East Asia',
+        value: "5",
+        label: "Japan",
+        description: "An island country in East Asia",
         media: (
           <Image
             alt="Japan"
@@ -151,8 +156,8 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '6',
-        label: 'China',
+        value: "6",
+        label: "China",
         description: "The world's third largest country",
         disabled: true,
         media: (
@@ -164,9 +169,9 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '7',
-        label: 'India',
-        description: 'The most populous democracy in the world',
+        value: "7",
+        label: "India",
+        description: "The most populous democracy in the world",
         media: (
           <Image
             alt="India"
@@ -178,12 +183,12 @@ const options: ComboboxGroupType[] = [
     ],
   },
   {
-    heading: 'North America',
+    heading: "North America",
     options: [
       {
-        value: '8',
-        label: 'USA',
-        description: 'Commonly known as the United States',
+        value: "8",
+        label: "USA",
+        description: "Commonly known as the United States",
         media: (
           <Image
             alt="USA"
@@ -193,9 +198,9 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '9',
-        label: 'Canada',
-        description: 'It has the longest coastline in the world',
+        value: "9",
+        label: "Canada",
+        description: "It has the longest coastline in the world",
         media: (
           <Image
             alt="Canada"
@@ -205,9 +210,9 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '10',
-        label: 'Mexico',
-        description: 'It is organized as a federal republic',
+        value: "10",
+        label: "Mexico",
+        description: "It is organized as a federal republic",
         media: (
           <Image
             alt="Mexico"
@@ -221,32 +226,32 @@ const options: ComboboxGroupType[] = [
 ];
 
 const meta: Meta = {
-  title: 'Components/Combobox',
+  title: "Components/Combobox",
   component: Combobox,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     color: {
       options: colors,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     validation: {
       options: validations,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     ref: {
       table: {
@@ -255,7 +260,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -268,8 +273,10 @@ const DefaultTemplate: Story<ComboboxProps> = (args) => {
         {...args}
         leftIcon={<MagnifyingGlass />}
         placeholder="Select a country..."
-        onChange={(selectedValue) => console.log('story selected value', selectedValue)}
-        initialValue={['1', '2']}
+        onChange={(selectedValue) =>
+          console.log("story selected value", selectedValue)
+        }
+        initialValue={["1", "2"]}
         multiple
       >
         {options.map((group, index) => (
@@ -320,7 +327,7 @@ const ToneTemplate: Story<ComboboxProps> = (args) => {
     </Combobox>
   ));
 
-  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+  return <div className={"flex flex-col space-y-4"}>{items}</div>;
 };
 
 export const Tones = ToneTemplate.bind({});
@@ -352,7 +359,7 @@ const ColorTemplate: Story<ComboboxProps> = (args) => {
     </Combobox>
   ));
 
-  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+  return <div className={"flex flex-col space-y-4"}>{items}</div>;
 };
 
 export const Colors = ColorTemplate.bind({});
@@ -390,7 +397,7 @@ const SizeTemplate: Story<ComboboxProps> = (args) => {
     </React.Fragment>
   ));
 
-  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+  return <div className={"flex flex-col space-y-4"}>{items}</div>;
 };
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
@@ -430,7 +437,7 @@ const RadiusTemplate: Story<ComboboxProps> = (args) => {
     </React.Fragment>
   ));
 
-  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+  return <div className={"flex flex-col space-y-4"}>{items}</div>;
 };
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
@@ -470,7 +477,7 @@ const ShadowTemplate: Story<ComboboxProps> = (args) => {
     </React.Fragment>
   ));
 
-  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+  return <div className={"flex flex-col space-y-4"}>{items}</div>;
 };
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
@@ -510,7 +517,7 @@ const ValidationTemplate: Story<ComboboxProps> = (args) => {
     </React.Fragment>
   ));
 
-  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+  return <div className={"flex flex-col space-y-4"}>{items}</div>;
 };
 
 export const Validations = ValidationTemplate.bind({});
@@ -543,7 +550,7 @@ const RingTemplate: Story<ComboboxProps> = (args) => {
     </Combobox>
   ));
 
-  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+  return <div className={"flex flex-col space-y-4"}>{items}</div>;
 };
 
 export const Ring = RingTemplate.bind({});
@@ -608,7 +615,7 @@ const StateTemplate: Story<ComboboxProps> = (args) => {
     </React.Fragment>
   );
 
-  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+  return <div className={"flex flex-col space-y-4"}>{items}</div>;
 };
 
 export const States = StateTemplate.bind({});

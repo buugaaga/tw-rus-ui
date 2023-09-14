@@ -7,33 +7,38 @@ import {
   TextareaSize,
   TextareaTone,
   TextareaValidation,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
-const tones: TextareaTone[] = ['light', 'solid', 'transparent'];
-const colors: TextareaColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
-const sizes: TextareaSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: TextareaRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
-const validations: TextareaValidation[] = ['none', 'invalid', 'valid', 'warning'];
-const shadows: TextareaShadow[] = ['none', 'sm', 'base', 'md'];
+const tones: TextareaTone[] = ["light", "solid", "transparent"];
+const colors: TextareaColor[] = ["blue", "purple", "gray", "dark", "black"];
+const sizes: TextareaSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: TextareaRadius[] = ["none", "sm", "base", "md", "lg", "xl"];
+const validations: TextareaValidation[] = [
+  "none",
+  "invalid",
+  "valid",
+  "warning",
+];
+const shadows: TextareaShadow[] = ["none", "sm", "base", "md"];
 
 const meta: Meta = {
-  title: 'Components/Textarea',
+  title: "Components/Textarea",
   component: Textarea,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     color: {
       options: colors,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     as: {
       table: {
@@ -47,7 +52,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -115,7 +120,12 @@ const RadiusTemplate: Story<TextareaProps> = (args) => {
       <View prop="radius" value={radius}>
         {tones.map((tone) => (
           <React.Fragment key={tone}>
-            <Textarea {...args} radius={radius} tone={tone} placeholder={tone} />
+            <Textarea
+              {...args}
+              radius={radius}
+              tone={tone}
+              placeholder={tone}
+            />
           </React.Fragment>
         ))}
       </View>
@@ -133,7 +143,12 @@ const ShadowTemplate: Story<TextareaProps> = (args) => {
       <View prop="shadow" value={shadow}>
         {tones.map((tone) => (
           <React.Fragment key={tone}>
-            <Textarea {...args} shadow={shadow} tone={tone} placeholder={tone} />
+            <Textarea
+              {...args}
+              shadow={shadow}
+              tone={tone}
+              placeholder={tone}
+            />
           </React.Fragment>
         ))}
       </View>
@@ -151,7 +166,12 @@ const ValidationTemplate: Story<TextareaProps> = (args) => {
       <View prop="validation" value={validation}>
         {tones.map((tone) => (
           <React.Fragment key={tone}>
-            <Textarea {...args} validation={validation} tone={tone} placeholder={tone} />
+            <Textarea
+              {...args}
+              validation={validation}
+              tone={tone}
+              placeholder={tone}
+            />
           </React.Fragment>
         ))}
       </View>
@@ -167,7 +187,13 @@ const StateTemplate: Story<TextareaProps> = (args) => {
   const items = (
     <View prop="disabled" value="true">
       {tones.map((tone) => (
-        <Textarea key={tone} {...args} tone={tone} placeholder={tone} disabled />
+        <Textarea
+          key={tone}
+          {...args}
+          tone={tone}
+          placeholder={tone}
+          disabled
+        />
       ))}
     </View>
   );

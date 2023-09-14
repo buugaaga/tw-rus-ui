@@ -5,128 +5,128 @@ import {
   TableSize,
   TableBorderStyle,
   TableHeaderColor,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
-const headings = ['ID', 'Country', 'Code', 'City'];
+const headings = ["ID", "Country", "Code", "City"];
 
 const rows = [
   {
     id: 1,
-    country: 'Portugal',
-    code: 'PT',
-    city: 'Foz do Arelho',
+    country: "Portugal",
+    code: "PT",
+    city: "Foz do Arelho",
   },
   {
     id: 2,
-    country: 'Brazil',
-    code: 'BR',
-    city: 'Cruz Alta',
+    country: "Brazil",
+    code: "BR",
+    city: "Cruz Alta",
   },
   {
     id: 3,
-    country: 'Belarus',
-    code: 'BY',
-    city: 'Veyno',
+    country: "Belarus",
+    code: "BY",
+    city: "Veyno",
   },
   {
     id: 4,
-    country: 'China',
-    code: 'CN',
-    city: 'Shangjiangxu',
+    country: "China",
+    code: "CN",
+    city: "Shangjiangxu",
   },
   {
     id: 5,
-    country: 'Sweden',
-    code: 'SE',
-    city: 'Örnsköldsvik',
+    country: "Sweden",
+    code: "SE",
+    city: "Örnsköldsvik",
   },
   {
     id: 6,
-    country: 'Japan',
-    code: 'JP',
-    city: 'Shibetsu',
+    country: "Japan",
+    code: "JP",
+    city: "Shibetsu",
   },
   {
     id: 7,
-    country: 'Norway',
-    code: 'NO',
-    city: 'Oslo',
+    country: "Norway",
+    code: "NO",
+    city: "Oslo",
   },
   {
     id: 8,
-    country: 'United States',
-    code: 'US',
-    city: 'Los Angeles',
+    country: "United States",
+    code: "US",
+    city: "Los Angeles",
   },
   {
     id: 9,
-    country: 'Ukraine',
-    code: 'UA',
-    city: 'Truskavets',
+    country: "Ukraine",
+    code: "UA",
+    city: "Truskavets",
   },
   {
     id: 10,
-    country: 'Netherlands',
-    code: 'NL',
-    city: 'Hellevoetsluis',
+    country: "Netherlands",
+    code: "NL",
+    city: "Hellevoetsluis",
   },
 ];
 
-const borderStyles: TableBorderStyle[] = ['solid', 'dashed'];
-const headerColors: TableHeaderColor[] = ['white', 'gray', 'dark', 'black'];
-const sizes: TableSize[] = ['sm', 'md', 'lg'];
-const radiuses: TableRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
+const borderStyles: TableBorderStyle[] = ["solid", "dashed"];
+const headerColors: TableHeaderColor[] = ["white", "gray", "dark", "black"];
+const sizes: TableSize[] = ["sm", "md", "lg"];
+const radiuses: TableRadius[] = ["none", "sm", "base", "md", "lg"];
 
 const meta: Meta = {
-  title: 'Components/Table',
+  title: "Components/Table",
   component: Table,
   argTypes: {
     borderStyle: {
       options: borderStyles,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     headerColor: {
       options: headerColors,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     footerBorders: {
       options: [true, false],
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     headerBorders: {
       options: [true, false],
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     horizontalBorders: {
       options: [true, false],
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     hoverable: {
       options: [true, false],
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     outerBorders: {
       options: [true, false],
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     striped: {
       options: [true, false],
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     verticalBorders: {
       options: [true, false],
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     ref: {
       table: {
@@ -136,13 +136,13 @@ const meta: Meta = {
   },
   parameters: {
     backgrounds: {
-      default: 'gray',
+      default: "gray",
       values: [
-        { name: 'gray', value: '#f8fafc' },
-        { name: 'dark', value: '#334155' },
+        { name: "gray", value: "#f8fafc" },
+        { name: "dark", value: "#334155" },
       ],
     },
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 

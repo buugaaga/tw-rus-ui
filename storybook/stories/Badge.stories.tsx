@@ -7,60 +7,67 @@ import {
   BadgeSize,
   BadgeTone,
   BadgeVariant,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
-const variants: BadgeVariant[] = ['primary', 'secondary', 'danger', 'success', 'warning', 'info'];
+const variants: BadgeVariant[] = [
+  "primary",
+  "secondary",
+  "danger",
+  "success",
+  "warning",
+  "info",
+];
 
 const colors: BadgeColor[] = [
-  'white',
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
+  "white",
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
 ];
-const tones: BadgeTone[] = ['solid', 'light', 'glossy', 'outline'];
-const sizes: BadgeSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: BadgeRadius[] = ['none', 'sm', 'md', 'lg', 'full'];
-const shadows: BadgeShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
+const tones: BadgeTone[] = ["solid", "light", "glossy", "outline"];
+const sizes: BadgeSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: BadgeRadius[] = ["none", "sm", "md", "lg", "full"];
+const shadows: BadgeShadow[] = ["none", "sm", "base", "md", "lg", "xl"];
 
 const meta: Meta = {
-  title: 'Components/Badge',
+  title: "Components/Badge",
   component: Badge,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     variant: {
       options: variants,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadowColor: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
   },
   parameters: {
@@ -191,7 +198,13 @@ const ShadowColorTemplate: Story<BadgeProps> = (args) => {
     <React.Fragment key={color}>
       <View prop="shadowColor" value={color}>
         {shadows.map((shadow) => (
-          <Badge {...args} key={shadow} shadowColor={color} color={color} shadow={shadow}>
+          <Badge
+            {...args}
+            key={shadow}
+            shadowColor={color}
+            color={color}
+            shadow={shadow}
+          >
             {color}
           </Badge>
         ))}

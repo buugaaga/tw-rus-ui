@@ -10,84 +10,84 @@ import {
   AlertVariant,
   Button,
   Text,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
-import { WarningCircle } from '@phosphor-icons/react';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
+import { WarningCircle } from "@phosphor-icons/react";
 
 const variants: AlertVariant[] = [
-  'primary',
-  'secondary',
-  'tertiary',
-  'danger',
-  'success',
-  'warning',
-  'info',
+  "primary",
+  "secondary",
+  "tertiary",
+  "danger",
+  "success",
+  "warning",
+  "info",
 ];
 
 const colors: AlertColor[] = [
-  'white',
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
+  "white",
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
 ];
-const tones: AlertTone[] = ['solid', 'light', 'outline'];
-const sizes: AlertSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: AlertRadius[] = ['none', 'sm', 'md', 'lg', 'full'];
-const shadows: AlertShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
-const accents: AlertAccent[] = ['none', 'top', 'right', 'bottom', 'left'];
+const tones: AlertTone[] = ["solid", "light", "outline"];
+const sizes: AlertSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: AlertRadius[] = ["none", "sm", "md", "lg", "full"];
+const shadows: AlertShadow[] = ["none", "sm", "base", "md", "lg", "xl"];
+const accents: AlertAccent[] = ["none", "top", "right", "bottom", "left"];
 const text =
-  'Our website uses cookies to improve your experience. By continuing to use our website, you agree to our use of cookies.';
+  "Our website uses cookies to improve your experience. By continuing to use our website, you agree to our use of cookies.";
 
 const meta: Meta = {
-  title: 'Components/Alert',
+  title: "Components/Alert",
   component: Alert,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     variant: {
       options: variants,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     accent: {
       options: accents,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadowColor: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     dismissable: {
       options: [true, false],
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     dismissableAnimation: {
       options: [true, false],
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
   },
   parameters: {
@@ -128,7 +128,13 @@ const ColorTemplate: Story<AlertProps> = (args) => {
     <React.Fragment key={color}>
       <View prop="color" value={color}>
         {tones.map((tone) => (
-          <Alert {...args} key={tone} color={color} tone={tone} title={`Tone: ${tone}`}>
+          <Alert
+            {...args}
+            key={tone}
+            color={color}
+            tone={tone}
+            title={`Tone: ${tone}`}
+          >
             {text}
           </Alert>
         ))}
@@ -146,7 +152,13 @@ const ToneTemplate: Story<AlertProps> = (args) => {
     <React.Fragment key={tone}>
       <View prop="tone" value={tone}>
         {colors.map((color) => (
-          <Alert {...args} key={color} color={color} tone={tone} title={`Color: ${color}`}>
+          <Alert
+            {...args}
+            key={color}
+            color={color}
+            tone={tone}
+            title={`Color: ${color}`}
+          >
             {text}
           </Alert>
         ))}
@@ -164,7 +176,13 @@ const AccentTemplate: Story<AlertProps> = (args) => {
     <React.Fragment key={accent}>
       <View prop="accent" value={accent}>
         {tones.map((tone) => (
-          <Alert {...args} key={tone} accent={accent} tone={tone} title={`Tone: ${tone}`}>
+          <Alert
+            {...args}
+            key={tone}
+            accent={accent}
+            tone={tone}
+            title={`Tone: ${tone}`}
+          >
             {text}
           </Alert>
         ))}
@@ -182,7 +200,13 @@ const SizeTemplate: Story<AlertProps> = (args) => {
     <React.Fragment key={size}>
       <View prop="size" value={size}>
         {tones.map((tone) => (
-          <Alert {...args} key={tone} size={size} tone={tone} title={`Tone: ${tone}`}>
+          <Alert
+            {...args}
+            key={tone}
+            size={size}
+            tone={tone}
+            title={`Tone: ${tone}`}
+          >
             {text}
           </Alert>
         ))}
@@ -268,12 +292,20 @@ const ExampleTemplate: Story<AlertProps> = (args) => {
           color="purple"
           className="border border-2 border-dashed border-purple-700"
         >
-          This is a simple informative alert. It has a title, an icon, and some content.
+          This is a simple informative alert. It has a title, an icon, and some
+          content.
         </Alert>
       </EnhancedView>
 
       <EnhancedView prop="Alert with custom JSX content">
-        <Alert {...args} tone="light" color="red" size="lg" shadow="base" className="border">
+        <Alert
+          {...args}
+          tone="light"
+          color="red"
+          size="lg"
+          shadow="base"
+          className="border"
+        >
           <div className="grid gap-y-3 justify-items-center text-red-600 w-full">
             <WarningCircle weight="duotone" className="w-16 h-16" />
             <Text variant="h3" className="text-red-600">
@@ -281,8 +313,9 @@ const ExampleTemplate: Story<AlertProps> = (args) => {
             </Text>
             <div className="border-b border-b-2 border-dashed border-red-200 w-full" />
             <Text size="base" className="text-center text-red-600">
-              Here is some custom JSX content. You can use any component you want here, including
-              Buttons, Text, etc. Furthermore you can use any Tailwind CSS classes you want.
+              Here is some custom JSX content. You can use any component you
+              want here, including Buttons, Text, etc. Furthermore you can use
+              any Tailwind CSS classes you want.
             </Text>
 
             <div className="flex gap-x-2">

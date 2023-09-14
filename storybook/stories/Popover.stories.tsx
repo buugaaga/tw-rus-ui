@@ -8,53 +8,53 @@ import {
   PopoverRadius,
   PopoverShadow,
   PopoverSize,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
-const sizes: PopoverSize[] = ['tight', 'xs', 'sm', 'md', 'lg'];
-const radiuses: PopoverRadius[] = ['none', 'sm', 'md', 'lg', 'full'];
-const shadows: PopoverShadow[] = ['none', 'sm', 'base', 'md'];
+const sizes: PopoverSize[] = ["tight", "xs", "sm", "md", "lg"];
+const radiuses: PopoverRadius[] = ["none", "sm", "md", "lg", "full"];
+const shadows: PopoverShadow[] = ["none", "sm", "base", "md"];
 const placements: PopoverPlacement[] = [
-  'top',
-  'top-start',
-  'top-end',
-  'bottom',
-  'bottom-start',
-  'bottom-end',
-  'left',
-  'left-start',
-  'left-end',
-  'right',
-  'right-start',
-  'right-end',
+  "top",
+  "top-start",
+  "top-end",
+  "bottom",
+  "bottom-start",
+  "bottom-end",
+  "left",
+  "left-start",
+  "left-end",
+  "right",
+  "right-start",
+  "right-end",
 ];
-const colors: PopoverColor[] = ['white', 'gray', 'slate', 'zinc'];
+const colors: PopoverColor[] = ["white", "gray", "slate", "zinc"];
 
 const meta: Meta = {
-  title: 'Components/Popover',
+  title: "Components/Popover",
   component: Popover,
   argTypes: {
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     placement: {
       options: placements,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     ref: {
       table: {
@@ -63,7 +63,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -185,9 +185,13 @@ const ExampleTemplate: Story<PopoverProps> = (args) => {
         </Popover.Trigger>
         <Popover.Content>
           <Card shadow="none" size="sm" radius="md">
-            <Card.Header className="bg-gray-50">This is a Card Header</Card.Header>
+            <Card.Header className="bg-gray-50">
+              This is a Card Header
+            </Card.Header>
             <Card.Body>This is the body of the card</Card.Body>
-            <Card.Footer className="bg-gray-50">And here is the footer</Card.Footer>
+            <Card.Footer className="bg-gray-50">
+              And here is the footer
+            </Card.Footer>
           </Card>
         </Popover.Content>
       </Popover>

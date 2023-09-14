@@ -1,17 +1,17 @@
-import { Drawer, DrawerProps, Button, DrawerPosition } from '@rewind-ui/core';
-import { Meta, Story } from '@storybook/react';
-import { useState } from 'react';
-import * as React from 'react';
+import { Drawer, DrawerProps, Button, DrawerPosition } from "tw-rus-ui";
+import { Meta, Story } from "@storybook/react";
+import { useState } from "react";
+import * as React from "react";
 
-const positions: DrawerPosition[] = ['top', 'right', 'bottom', 'left'];
+const positions: DrawerPosition[] = ["top", "right", "bottom", "left"];
 
 const meta: Meta = {
-  title: 'Components/Drawer',
+  title: "Components/Drawer",
   component: Drawer,
   argTypes: {
     position: {
       options: positions,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     ref: {
       table: {
@@ -30,7 +30,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 

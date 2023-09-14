@@ -7,18 +7,18 @@ import {
   SelectSize,
   SelectTone,
   SelectValidation,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
-import { MagnifyingGlass } from '@phosphor-icons/react';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
+import { MagnifyingGlass } from "@phosphor-icons/react";
 
-const tones: SelectTone[] = ['light', 'solid', 'transparent'];
-const colors: SelectColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
-const sizes: SelectSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: SelectRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
-const validations: SelectValidation[] = ['none', 'invalid', 'valid', 'warning'];
-const shadows: SelectShadow[] = ['none', 'sm', 'base', 'md'];
+const tones: SelectTone[] = ["light", "solid", "transparent"];
+const colors: SelectColor[] = ["blue", "purple", "gray", "dark", "black"];
+const sizes: SelectSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: SelectRadius[] = ["none", "sm", "base", "md", "lg", "full"];
+const validations: SelectValidation[] = ["none", "invalid", "valid", "warning"];
+const shadows: SelectShadow[] = ["none", "sm", "base", "md"];
 
 const options = (
   <>
@@ -29,32 +29,32 @@ const options = (
 );
 
 const meta: Meta = {
-  title: 'Components/Select',
+  title: "Components/Select",
   component: Select,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     color: {
       options: colors,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     validation: {
       options: validations,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     ref: {
       table: {
@@ -63,7 +63,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -179,7 +179,12 @@ const ValidationTemplate: Story<SelectProps> = (args) => {
       <View prop="validation" value={validation}>
         {tones.map((tone) => (
           <React.Fragment key={tone}>
-            <Select {...args} validation={validation} tone={tone} placeholder={tone}>
+            <Select
+              {...args}
+              validation={validation}
+              tone={tone}
+              placeholder={tone}
+            >
               {options}
             </Select>
           </React.Fragment>

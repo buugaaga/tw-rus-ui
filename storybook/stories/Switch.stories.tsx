@@ -1,31 +1,46 @@
-import { Switch, SwitchProps, SwitchColor, SwitchRadius, SwitchSize } from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+import {
+  Switch,
+  SwitchProps,
+  SwitchColor,
+  SwitchRadius,
+  SwitchSize,
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
-const colors: SwitchColor[] = ['blue', 'red', 'green', 'yellow', 'purple', 'gray', 'dark', 'black'];
-const sizes: SwitchSize[] = ['sm', 'md', 'lg', 'xl'];
-const radiuses: SwitchRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
+const colors: SwitchColor[] = [
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
+];
+const sizes: SwitchSize[] = ["sm", "md", "lg", "xl"];
+const radiuses: SwitchRadius[] = ["none", "sm", "base", "md", "lg", "full"];
 
-const label = 'I agree to the terms of service';
-const description = 'By checking this box, you agree to the Terms of Service';
-const error = 'You must agree to the Terms of Service';
+const label = "I agree to the terms of service";
+const description = "By checking this box, you agree to the Terms of Service";
+const error = "You must agree to the Terms of Service";
 
 const meta: Meta = {
-  title: 'Components/Switch',
+  title: "Components/Switch",
   component: Switch,
   argTypes: {
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     ref: {
       table: {
@@ -34,7 +49,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -43,7 +58,13 @@ export default meta;
 const DefaultTemplate: Story<SwitchProps> = (args) => {
   return (
     <EnhancedView prop="Default">
-      <Switch checked {...args} label={label} description={description} error={error} />
+      <Switch
+        checked
+        {...args}
+        label={label}
+        description={description}
+        error={error}
+      />
     </EnhancedView>
   );
 };

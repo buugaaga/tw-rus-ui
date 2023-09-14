@@ -5,42 +5,42 @@ import {
   InputGroupSize,
   InputGroupTone,
   InputGroupShadow,
-} from '@rewind-ui/core';
-import { Meta, Story } from '@storybook/react';
+} from "tw-rus-ui";
+import { Meta, Story } from "@storybook/react";
 import {
   ChatDots,
   FloppyDisk,
   MagnifyingGlass,
   PaperPlaneTilt,
   Users,
-} from '@phosphor-icons/react';
-import * as React from 'react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "@phosphor-icons/react";
+import * as React from "react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
-const tones: InputGroupTone[] = ['light', 'solid', 'transparent'];
-const sizes: InputGroupSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: InputGroupRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
-const shadows: InputGroupShadow[] = ['none', 'sm', 'base', 'md'];
+const tones: InputGroupTone[] = ["light", "solid", "transparent"];
+const sizes: InputGroupSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: InputGroupRadius[] = ["none", "sm", "base", "md", "lg"];
+const shadows: InputGroupShadow[] = ["none", "sm", "base", "md"];
 
 const meta: Meta = {
-  title: 'Components/InputGroup',
+  title: "Components/InputGroup",
   component: InputGroup,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     as: {
       table: {
@@ -54,7 +54,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -128,16 +128,19 @@ const InputExample = (args) => (
     <InputGroup.Text>
       <MagnifyingGlass weight="duotone" />
     </InputGroup.Text>
-    <InputGroup.Input placeholder={'Search...'} type="search"></InputGroup.Input>
+    <InputGroup.Input
+      placeholder={"Search..."}
+      type="search"
+    ></InputGroup.Input>
   </InputGroup>
 );
 
 const DatesExample = (args) => (
   <InputGroup {...args}>
     <InputGroup.Text>From</InputGroup.Text>
-    <InputGroup.Input placeholder={'Search...'} type="date" />
+    <InputGroup.Input placeholder={"Search..."} type="date" />
     <InputGroup.Text>To</InputGroup.Text>
-    <InputGroup.Input placeholder={'Search...'} type="date"></InputGroup.Input>
+    <InputGroup.Input placeholder={"Search..."} type="date"></InputGroup.Input>
   </InputGroup>
 );
 

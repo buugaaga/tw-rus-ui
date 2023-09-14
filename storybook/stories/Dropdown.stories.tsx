@@ -9,10 +9,10 @@ import {
   Button,
   DropdownProps,
   DropdownItemColor,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 import {
   ChatCircleText,
   Export,
@@ -22,65 +22,65 @@ import {
   SignOut,
   Trash,
   XCircle,
-} from '@phosphor-icons/react';
+} from "@phosphor-icons/react";
 
-const sizes: DropdownSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: DropdownRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
-const shadows: DropdownShadow[] = ['none', 'sm', 'base', 'md'];
+const sizes: DropdownSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: DropdownRadius[] = ["none", "sm", "base", "md", "lg"];
+const shadows: DropdownShadow[] = ["none", "sm", "base", "md"];
 const placements: DropdownPlacement[] = [
-  'top',
-  'top-start',
-  'top-end',
-  'bottom',
-  'bottom-start',
-  'bottom-end',
-  'left',
-  'left-start',
-  'left-end',
-  'right',
-  'right-start',
-  'right-end',
+  "top",
+  "top-start",
+  "top-end",
+  "bottom",
+  "bottom-start",
+  "bottom-end",
+  "left",
+  "left-start",
+  "left-end",
+  "right",
+  "right-start",
+  "right-end",
 ];
-const colors: DropdownColor[] = ['white', 'gray', 'slate', 'zinc'];
-const modes: DropdownMode[] = ['spacey', 'tight'];
+const colors: DropdownColor[] = ["white", "gray", "slate", "zinc"];
+const modes: DropdownMode[] = ["spacey", "tight"];
 const itemColors: DropdownItemColor[] = [
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
 ];
 
 const meta: Meta = {
-  title: 'Components/Dropdown',
+  title: "Components/Dropdown",
   component: Dropdown,
   argTypes: {
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     itemColor: {
       options: itemColors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     placement: {
       options: placements,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     mode: {
       options: modes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     trigger: {
       table: {
@@ -94,7 +94,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 

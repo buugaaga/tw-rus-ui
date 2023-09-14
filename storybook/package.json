@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.10",
-    "@rewind-ui/core": "0.15",
+    "tw-rus-ui": "workspace:*",
     "class-variance-authority": "^0.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -31,5 +31,6 @@
     "tailwindcss": "^3.3.3",
     "typescript": "^4.9.5",
     "vite": "^4.4.7"
-  }
+  },
+  "workspaces": ["storybook"]
 }

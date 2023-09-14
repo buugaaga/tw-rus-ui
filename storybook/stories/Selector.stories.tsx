@@ -7,45 +7,45 @@ import {
   SelectorTabProps,
   SelectorTone,
   Tooltip,
-} from '@rewind-ui/core';
-import { Meta, Story } from '@storybook/react';
-import * as React from 'react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import { Meta, Story } from "@storybook/react";
+import * as React from "react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
-const sizes: SelectorSize[] = ['xs', 'sm', 'md', 'lg'];
-const tones: SelectorTone[] = ['solid', 'light'];
-const radiuses: SelectorRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
-const shadows: SelectorShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
+const sizes: SelectorSize[] = ["xs", "sm", "md", "lg"];
+const tones: SelectorTone[] = ["solid", "light"];
+const radiuses: SelectorRadius[] = ["none", "sm", "base", "md", "lg", "full"];
+const shadows: SelectorShadow[] = ["none", "sm", "base", "md", "lg", "xl"];
 const animations: boolean[] = [true, false];
 const separators: boolean[] = [true, false];
 
 const meta: Meta = {
-  title: 'Components/Selector',
+  title: "Components/Selector",
   component: Selector,
   argTypes: {
     color: {
       options: tones,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     withAnimation: {
       options: animations,
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     withSeparator: {
       options: separators,
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     ref: {
       table: {
@@ -54,7 +54,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -62,77 +62,77 @@ export default meta;
 
 const simpleOptions: SelectorTabProps[] = [
   {
-    label: 'White',
-    anchor: 'a',
-    color: 'white',
+    label: "White",
+    anchor: "a",
+    color: "white",
   },
   {
-    label: 'Blue',
-    anchor: 'b',
-    color: 'blue',
+    label: "Blue",
+    anchor: "b",
+    color: "blue",
   },
   {
-    label: 'Red',
-    anchor: 'c',
-    color: 'red',
+    label: "Red",
+    anchor: "c",
+    color: "red",
   },
   {
-    label: 'Green',
-    anchor: 'd',
-    color: 'green',
+    label: "Green",
+    anchor: "d",
+    color: "green",
   },
 ];
 
 const options: SelectorTabProps[] = [
   {
-    label: 'White',
-    anchor: 'a',
-    color: 'white',
+    label: "White",
+    anchor: "a",
+    color: "white",
   },
   {
-    label: 'Blue',
-    anchor: 'b',
-    color: 'blue',
+    label: "Blue",
+    anchor: "b",
+    color: "blue",
   },
   {
-    label: 'Red',
-    anchor: 'c',
-    color: 'red',
+    label: "Red",
+    anchor: "c",
+    color: "red",
   },
   {
-    label: 'Green',
-    anchor: 'd',
-    color: 'green',
+    label: "Green",
+    anchor: "d",
+    color: "green",
   },
   {
-    label: 'Yellow',
-    anchor: 'e',
-    color: 'yellow',
+    label: "Yellow",
+    anchor: "e",
+    color: "yellow",
   },
   {
-    label: 'Purple',
-    anchor: 'f',
-    color: 'purple',
+    label: "Purple",
+    anchor: "f",
+    color: "purple",
   },
   {
-    label: 'Gray',
-    anchor: 'g',
-    color: 'gray',
+    label: "Gray",
+    anchor: "g",
+    color: "gray",
   },
   {
-    label: 'Dark',
-    anchor: 'h',
-    color: 'dark',
+    label: "Dark",
+    anchor: "h",
+    color: "dark",
   },
   {
-    label: 'Black',
-    anchor: 'i',
-    color: 'black',
+    label: "Black",
+    anchor: "i",
+    color: "black",
   },
   {
-    label: 'Disabled',
-    anchor: 'j',
-    color: 'black',
+    label: "Disabled",
+    anchor: "j",
+    color: "black",
     disabled: true,
   },
   {
@@ -149,8 +149,8 @@ const options: SelectorTabProps[] = [
         </span>
       </Tooltip>
     ),
-    anchor: 'k',
-    color: 'white',
+    anchor: "k",
+    color: "white",
   },
 ];
 
@@ -158,7 +158,7 @@ function generateRandomLetter(options: SelectorTabProps[]) {
   const alphabet = options
     .filter((el) => !el.disabled)
     .map((option) => option.anchor)
-    .join('');
+    .join("");
 
   return alphabet[Math.floor(Math.random() * alphabet.length)];
 }
@@ -188,7 +188,12 @@ const SizeTemplate: Story<SelectorProps> = (args) => {
     <ViewGroup>
       {sizes.map((size) => (
         <View key={size} prop="size" value={size}>
-          <Selector {...args} key={size} size={size} value={generateRandomLetter(options)}>
+          <Selector
+            {...args}
+            key={size}
+            size={size}
+            value={generateRandomLetter(options)}
+          >
             {options.map((option) => (
               <Selector.Tab
                 key={size + option.anchor}
@@ -264,7 +269,12 @@ const ShadowTemplate: Story<SelectorProps> = (args) => {
     <ViewGroup>
       {shadows.map((shadow) => (
         <View key={shadow} prop="shadow" value={shadow}>
-          <Selector {...args} key={shadow} shadow={shadow} value={generateRandomLetter(options)}>
+          <Selector
+            {...args}
+            key={shadow}
+            shadow={shadow}
+            value={generateRandomLetter(options)}
+          >
             {options.map((option) => (
               <Selector.Tab
                 key={shadow + option.anchor}
@@ -287,7 +297,7 @@ const AnimationTemplate: Story<SelectorProps> = (args) => {
   return (
     <ViewGroup>
       {animations.map((animation, index) => (
-        <View key={index} prop="animation" value={animation ? 'true' : 'false'}>
+        <View key={index} prop="animation" value={animation ? "true" : "false"}>
           <Selector
             {...args}
             key={index}
@@ -337,7 +347,11 @@ const SeparatorTemplate: Story<SelectorProps> = (args) => {
       </View>
 
       {separators.map((separator, index) => (
-        <View key={index} prop="withSeparator" value={separator ? 'true' : 'false'}>
+        <View
+          key={index}
+          prop="withSeparator"
+          value={separator ? "true" : "false"}
+        >
           <Selector
             {...args}
             key={index}
@@ -366,7 +380,11 @@ const OrientationTemplate: Story<SelectorProps> = (args) => {
   return (
     <ViewGroup>
       <View prop="orientation" value="horizontal">
-        <Selector {...args} orientation="horizontal" value={generateRandomLetter(options)}>
+        <Selector
+          {...args}
+          orientation="horizontal"
+          value={generateRandomLetter(options)}
+        >
           {options.map((option) => (
             <Selector.Tab
               key={3 + option.anchor}
@@ -380,7 +398,11 @@ const OrientationTemplate: Story<SelectorProps> = (args) => {
       </View>
 
       <View prop="orientation" value="vertical">
-        <Selector {...args} orientation="vertical" value={generateRandomLetter(options)}>
+        <Selector
+          {...args}
+          orientation="vertical"
+          value={generateRandomLetter(options)}
+        >
           {options.map((option) => (
             <Selector.Tab
               key={3 + option.anchor}
@@ -407,7 +429,9 @@ const FullWidthTemplate: Story<SelectorProps> = (args) => {
           fullWidth={true}
           orientation="horizontal"
           withSeparator={true}
-          separator={<span className="last-of-type:hidden w-px h-5 rounded-full bg-gray-300" />}
+          separator={
+            <span className="last-of-type:hidden w-px h-5 rounded-full bg-gray-300" />
+          }
           value={generateRandomLetter(options)}
         >
           {options.map((option) => (
@@ -428,7 +452,9 @@ const FullWidthTemplate: Story<SelectorProps> = (args) => {
           fullWidth={true}
           orientation="vertical"
           withSeparator={true}
-          separator={<span className="last-of-type:hidden w-px h-5 rounded-full bg-gray-300" />}
+          separator={
+            <span className="last-of-type:hidden w-px h-5 rounded-full bg-gray-300" />
+          }
           value={generateRandomLetter(options)}
         >
           {options.map((option) => (

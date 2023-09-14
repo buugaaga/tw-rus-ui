@@ -8,63 +8,63 @@ import {
   InputTone,
   InputType,
   InputValidation,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
-import { MagnifyingGlass, Rocket, RocketLaunch } from '@phosphor-icons/react';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
+import { MagnifyingGlass, Rocket, RocketLaunch } from "@phosphor-icons/react";
 
-const tones: InputTone[] = ['light', 'solid', 'transparent'];
-const colors: InputColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
-const sizes: InputSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: InputRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
-const validations: InputValidation[] = ['none', 'invalid', 'valid', 'warning'];
-const shadows: InputShadow[] = ['none', 'sm', 'base', 'md'];
+const tones: InputTone[] = ["light", "solid", "transparent"];
+const colors: InputColor[] = ["blue", "purple", "gray", "dark", "black"];
+const sizes: InputSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: InputRadius[] = ["none", "sm", "base", "md", "lg", "full"];
+const validations: InputValidation[] = ["none", "invalid", "valid", "warning"];
+const shadows: InputShadow[] = ["none", "sm", "base", "md"];
 const types: InputType[] = [
-  'color',
-  'datetime-local',
-  'date',
-  'email',
-  'file',
-  'number',
-  'password',
-  'range',
-  'search',
-  'text',
-  'time',
+  "color",
+  "datetime-local",
+  "date",
+  "email",
+  "file",
+  "number",
+  "password",
+  "range",
+  "search",
+  "text",
+  "time",
 ];
 
 const meta: Meta = {
-  title: 'Components/Input',
+  title: "Components/Input",
   component: Input,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     color: {
       options: colors,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     validation: {
       options: validations,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     type: {
       options: types,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     ref: {
       table: {
@@ -73,7 +73,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -177,7 +177,12 @@ const ValidationTemplate: Story<InputProps> = (args) => {
       <View prop="validation" value={validation}>
         {tones.map((tone) => (
           <React.Fragment key={tone}>
-            <Input {...args} validation={validation} tone={tone} placeholder={tone} />
+            <Input
+              {...args}
+              validation={validation}
+              tone={tone}
+              placeholder={tone}
+            />
           </React.Fragment>
         ))}
       </View>
@@ -251,7 +256,13 @@ const FileTemplate: Story<InputProps> = (args) => {
     <View prop="size" value={size} key={size}>
       {tones.map((tone) => (
         <React.Fragment key={tone}>
-          <Input {...args} size={size} tone={tone} placeholder={tone} type="file" />
+          <Input
+            {...args}
+            size={size}
+            tone={tone}
+            placeholder={tone}
+            type="file"
+          />
         </React.Fragment>
       ))}
     </View>

@@ -5,48 +5,48 @@ import {
   CheckboxRadius,
   CheckboxSize,
   CheckboxTone,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { View, ViewGroup } from "../components/View";
 
 const colors: CheckboxColor[] = [
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
 ];
-const radiuses: CheckboxRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
-const sizes: CheckboxSize[] = ['sm', 'md', 'lg', 'xl'];
-const tones: CheckboxTone[] = ['solid', 'light'];
+const radiuses: CheckboxRadius[] = ["none", "sm", "base", "md", "lg", "full"];
+const sizes: CheckboxSize[] = ["sm", "md", "lg", "xl"];
+const tones: CheckboxTone[] = ["solid", "light"];
 
-const label = 'I agree to the terms of service';
-const description = 'By checking this box, you agree to the Terms of Service';
-const error = 'You must agree to the Terms of Service';
+const label = "I agree to the terms of service";
+const description = "By checking this box, you agree to the Terms of Service";
+const error = "You must agree to the Terms of Service";
 
 const meta: Meta = {
-  title: 'Components/Checkbox',
+  title: "Components/Checkbox",
   component: Checkbox,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     ref: {
       table: {
@@ -55,7 +55,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -64,7 +64,12 @@ export default meta;
 const DefaultTemplate: Story<CheckboxProps> = (args) => {
   return (
     <View prop="Default">
-      <Checkbox label={label} description={description} error={error} {...args} />
+      <Checkbox
+        label={label}
+        description={description}
+        error={error}
+        {...args}
+      />
     </View>
   );
 };

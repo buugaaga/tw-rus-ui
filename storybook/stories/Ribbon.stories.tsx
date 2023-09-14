@@ -8,66 +8,73 @@ import {
   RibbonShadow,
   RibbonSize,
   RibbonTone,
-} from '@rewind-ui/core';
-import { RibbonVariant } from '@rewind-ui/core/dist/components/Ribbon/Ribbon.types';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
-import { Star } from '@phosphor-icons/react';
+} from "tw-rus-ui";
+import { RibbonVariant } from "tw-rus-ui/dist/components/Ribbon/Ribbon.types";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
+import { Star } from "@phosphor-icons/react";
 
 const colors: RibbonColor[] = [
-  'white',
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
+  "white",
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
 ];
-const tones: RibbonTone[] = ['solid', 'light', 'glossy'];
-const radiuses: RibbonRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
-const shadows: RibbonShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
-const sizes: RibbonSize[] = ['sm', 'md', 'lg'];
-const positions: RibbonPosition[] = ['left', 'right', 'top-left', 'top-right'];
-const variants: RibbonVariant[] = ['primary', 'secondary', 'danger', 'success', 'warning', 'info'];
+const tones: RibbonTone[] = ["solid", "light", "glossy"];
+const radiuses: RibbonRadius[] = ["none", "sm", "base", "md", "lg"];
+const shadows: RibbonShadow[] = ["none", "sm", "base", "md", "lg", "xl"];
+const sizes: RibbonSize[] = ["sm", "md", "lg"];
+const positions: RibbonPosition[] = ["left", "right", "top-left", "top-right"];
+const variants: RibbonVariant[] = [
+  "primary",
+  "secondary",
+  "danger",
+  "success",
+  "warning",
+  "info",
+];
 
 const meta: Meta = {
-  title: 'Components/Ribbon',
+  title: "Components/Ribbon",
   component: Ribbon,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     position: {
       options: positions,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadowColor: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
     variant: {
       options: variants,
-      control: { type: 'radio' },
+      control: { type: "radio" },
     },
   },
   parameters: {
@@ -78,7 +85,9 @@ const meta: Meta = {
 export default meta;
 
 const Template = (args: RibbonProps) => {
-  const className = ['left', 'top-left'].includes(args.position) ? 'ml-auto' : 'mr-auto';
+  const className = ["left", "top-left"].includes(args.position)
+    ? "ml-auto"
+    : "mr-auto";
 
   return (
     <Card>
@@ -120,7 +129,12 @@ const ColorTemplate: Story<RibbonProps> = (args) => {
     <React.Fragment key={color}>
       <View prop="color" value={color}>
         {tones.map((tone) => (
-          <Template {...args} key={`${color}-${tone}`} color={color} tone={tone} />
+          <Template
+            {...args}
+            key={`${color}-${tone}`}
+            color={color}
+            tone={tone}
+          />
         ))}
       </View>
     </React.Fragment>
@@ -136,7 +150,12 @@ const ToneTemplate: Story<RibbonProps> = (args) => {
     <React.Fragment key={tone}>
       <View prop="tone" value={tone}>
         {colors.map((color) => (
-          <Template {...args} key={`${tone}-${color}`} color={color} tone={tone} />
+          <Template
+            {...args}
+            key={`${tone}-${color}`}
+            color={color}
+            tone={tone}
+          />
         ))}
       </View>
     </React.Fragment>
@@ -168,7 +187,12 @@ const RadiusTemplate: Story<RibbonProps> = (args) => {
     <React.Fragment key={radius}>
       <View prop="radius" value={radius}>
         {tones.map((tone) => (
-          <Template {...args} key={`${tone}-${radius}`} radius={radius} tone={tone} />
+          <Template
+            {...args}
+            key={`${tone}-${radius}`}
+            radius={radius}
+            tone={tone}
+          />
         ))}
       </View>
     </React.Fragment>
@@ -184,7 +208,12 @@ const ShadowTemplate: Story<RibbonProps> = (args) => {
     <React.Fragment key={shadow}>
       <View prop="shadow" value={shadow}>
         {tones.map((tone) => (
-          <Template {...args} key={`${tone}-${shadow}`} shadow={shadow} tone={tone} />
+          <Template
+            {...args}
+            key={`${tone}-${shadow}`}
+            shadow={shadow}
+            tone={tone}
+          />
         ))}
       </View>
     </React.Fragment>

@@ -6,64 +6,64 @@ import {
   TooltipRadius,
   TooltipShadow,
   TooltipSize,
-} from '@rewind-ui/core';
-import { TooltipPlacement } from '@rewind-ui/core/src/components/Tooltip/Tooltip.types';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import { TooltipPlacement } from "tw-rus-ui/dist/components/Tooltip/Tooltip.types";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
-const sizes: TooltipSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: TooltipRadius[] = ['none', 'sm', 'md', 'lg', 'full'];
+const sizes: TooltipSize[] = ["xs", "sm", "md", "lg"];
+const radiuses: TooltipRadius[] = ["none", "sm", "md", "lg", "full"];
 const colors: TooltipColor[] = [
-  'white',
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
+  "white",
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
 ];
-const shadows: TooltipShadow[] = ['none', 'sm', 'base', 'md'];
+const shadows: TooltipShadow[] = ["none", "sm", "base", "md"];
 const placements: TooltipPlacement[] = [
-  'top',
-  'top-start',
-  'top-end',
-  'right',
-  'right-start',
-  'right-end',
-  'bottom',
-  'bottom-start',
-  'bottom-end',
-  'left',
-  'left-start',
-  'left-end',
+  "top",
+  "top-start",
+  "top-end",
+  "right",
+  "right-start",
+  "right-end",
+  "bottom",
+  "bottom-start",
+  "bottom-end",
+  "left",
+  "left-start",
+  "left-end",
 ];
 
 const meta: Meta = {
-  title: 'Components/Tooltip',
+  title: "Components/Tooltip",
   component: Tooltip,
   argTypes: {
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     radius: {
       options: radiuses,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     shadow: {
       options: shadows,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     placement: {
       options: placements,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     ref: {
       table: {
@@ -72,7 +72,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -81,7 +81,12 @@ export default meta;
 const DefaultTemplate: Story<TooltipProps> = (args) => {
   return (
     <EnhancedView prop="Default">
-      <Tooltip label="This is a Tooltip" initiallyOpen={true} withinPortal={true} {...args}>
+      <Tooltip
+        label="This is a Tooltip"
+        initiallyOpen={true}
+        withinPortal={true}
+        {...args}
+      >
         <Button>Trigger</Button>
       </Tooltip>
     </EnhancedView>
@@ -103,7 +108,7 @@ const ColorTemplate: Story<TooltipProps> = (args) => {
             {...args}
           >
             <Button color={color}>
-              <span className={'capitalize'}>{color}</span>
+              <span className={"capitalize"}>{color}</span>
             </Button>
           </Tooltip>
 
@@ -115,7 +120,7 @@ const ColorTemplate: Story<TooltipProps> = (args) => {
             {...args}
           >
             <Button color={color} tone="light">
-              <span className={'capitalize'}>{color}</span>
+              <span className={"capitalize"}>{color}</span>
             </Button>
           </Tooltip>
         </View>
@@ -197,7 +202,12 @@ const PlacementTemplate: Story<TooltipProps> = (args) => {
   return (
     <ViewGroup>
       {placements.map((placement) => (
-        <View key={placement} prop="placement" value={placement} justify="evenly">
+        <View
+          key={placement}
+          prop="placement"
+          value={placement}
+          justify="evenly"
+        >
           <Tooltip
             label="This is a Tooltip"
             tone="solid"

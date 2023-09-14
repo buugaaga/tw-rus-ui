@@ -7,115 +7,134 @@ import {
   TextTracking,
   TextVariant,
   TextWeight,
-} from '@rewind-ui/core';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { EnhancedView, View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { EnhancedView, View, ViewGroup } from "../components/View";
 
 const shortSentence =
-  'The cat lazily stretched out on the sun-soaked windowsill, basking in the warmth of the afternoon sun.';
+  "The cat lazily stretched out on the sun-soaked windowsill, basking in the warmth of the afternoon sun.";
 const longText =
-  'The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.';
+  "The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.";
 
 const colors: TextColor[] = [
-  'white',
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
+  "white",
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
 ];
 const weights: TextWeight[] = [
-  'thin',
-  'extraLight',
-  'light',
-  'normal',
-  'medium',
-  'semiBold',
-  'bold',
-  'extraBold',
-  'black',
+  "thin",
+  "extraLight",
+  "light",
+  "normal",
+  "medium",
+  "semiBold",
+  "bold",
+  "extraBold",
+  "black",
 ];
 const sizes: TextSize[] = [
-  'xs',
-  'sm',
-  'base',
-  'lg',
-  'xl',
-  '2xl',
-  '3xl',
-  '4xl',
-  '5xl',
-  '6xl',
-  '7xl',
-  '8xl',
-  '9xl',
+  "xs",
+  "sm",
+  "base",
+  "lg",
+  "xl",
+  "2xl",
+  "3xl",
+  "4xl",
+  "5xl",
+  "6xl",
+  "7xl",
+  "8xl",
+  "9xl",
 ];
-const variants: TextVariant[] = ['d1', 'd2', 'd3', 'd4', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
+const variants: TextVariant[] = [
+  "d1",
+  "d2",
+  "d3",
+  "d4",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "p",
+];
 const leadings: TextLeading[] = [
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '10',
-  'none',
-  'tight',
-  'snug',
-  'normal',
-  'relaxed',
-  'loose',
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "none",
+  "tight",
+  "snug",
+  "normal",
+  "relaxed",
+  "loose",
 ];
-const trackings: TextTracking[] = ['tighter', 'tight', 'normal', 'wide', 'wider', 'widest'];
+const trackings: TextTracking[] = [
+  "tighter",
+  "tight",
+  "normal",
+  "wide",
+  "wider",
+  "widest",
+];
 
 const glossaries = {
   variants: {
-    d1: 'Display 1',
-    d2: 'Display 2',
-    d3: 'Display 3',
-    d4: 'Display 4',
-    h1: 'Heading 1',
-    h2: 'Heading 2',
-    h3: 'Heading 3',
-    h4: 'Heading 4',
-    h5: 'Heading 5',
-    h6: 'Heading 6',
-    p: 'Paragraph',
+    d1: "Display 1",
+    d2: "Display 2",
+    d3: "Display 3",
+    d4: "Display 4",
+    h1: "Heading 1",
+    h2: "Heading 2",
+    h3: "Heading 3",
+    h4: "Heading 4",
+    h5: "Heading 5",
+    h6: "Heading 6",
+    p: "Paragraph",
   },
 };
 
 const meta: Meta = {
-  title: 'Components/Text',
+  title: "Components/Text",
   component: Text,
   argTypes: {
     variant: {
       options: variants,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     color: {
       options: colors,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     weight: {
       options: weights,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     size: {
       options: sizes,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     tracking: {
       options: trackings,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     leading: {
       options: leadings,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     as: {
       table: {
@@ -129,7 +148,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: 'alpha' },
+    controls: { expanded: true, sort: "alpha" },
   },
 };
 
@@ -242,7 +261,7 @@ const TrackingTemplate: Story<TextProps> = (args) => {
 export const Tracking = TrackingTemplate.bind({});
 
 const ExampleTemplate: Story<TextProps> = (args) => {
-  const classNames = ['underline decoration-2 decoration-sky-500'];
+  const classNames = ["underline decoration-2 decoration-sky-500"];
 
   const items = classNames.map((className) => (
     <React.Fragment key={className}>

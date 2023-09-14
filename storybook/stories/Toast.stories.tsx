@@ -13,56 +13,68 @@ import {
   ToastVariant,
   AlertProps,
   Alert,
-} from '@rewind-ui/core';
-import { useEffect } from 'react';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { View, ViewGroup } from '../components/View';
+} from "tw-rus-ui";
+import { useEffect } from "react";
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+import { View, ViewGroup } from "../components/View";
 
-const positions: ToastPosition[] = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
-const colors: ToastColor[] = [
-  'white',
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
+const positions: ToastPosition[] = [
+  "top-left",
+  "top-right",
+  "bottom-left",
+  "bottom-right",
 ];
-const tones: ToastTone[] = ['solid', 'light'];
-const radiuses: ToastRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
-const shadows: ToastShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
-const variants: ToastVariant[] = ['primary', 'secondary', 'danger', 'success', 'warning', 'info'];
+const colors: ToastColor[] = [
+  "white",
+  "blue",
+  "red",
+  "green",
+  "yellow",
+  "purple",
+  "gray",
+  "dark",
+  "black",
+];
+const tones: ToastTone[] = ["solid", "light"];
+const radiuses: ToastRadius[] = ["none", "sm", "base", "md", "lg"];
+const shadows: ToastShadow[] = ["none", "sm", "base", "md", "lg", "xl"];
+const variants: ToastVariant[] = [
+  "primary",
+  "secondary",
+  "danger",
+  "success",
+  "warning",
+  "info",
+];
 
 const actions = [
   {
-    label: 'Cancel',
+    label: "Cancel",
     onClick: () => {
-      console.log('Clicked close');
+      console.log("Clicked close");
     },
     primary: false,
   },
   {
-    label: 'Delete',
+    label: "Delete",
     onClick: () => {
-      console.log('Clicked save');
+      console.log("Clicked save");
     },
     primary: true,
   },
 ];
 
 const meta: Meta = {
-  title: 'Components/Toast',
+  title: "Components/Toast",
   component: Toast,
   argTypes: {
     position: {
       options: positions,
-      control: { type: 'select' },
+      control: { type: "select" },
     },
     max: {
-      control: { type: 'number' },
+      control: { type: "number" },
     },
     ref: {
       table: {
@@ -83,12 +95,12 @@ const DefaultTemplate: Story<any> = (args) => {
       return;
     }
     toast.add({
-      title: 'Are you sure?',
-      description: 'Do you really want to delete the selected User?',
-      iconType: 'question',
+      title: "Are you sure?",
+      description: "Do you really want to delete the selected User?",
+      iconType: "question",
       id: counter.toString(),
       duration: 3000,
-      color: 'green',
+      color: "green",
       actions,
     });
   }, [counter]);
