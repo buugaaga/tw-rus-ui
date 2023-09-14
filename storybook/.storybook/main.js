@@ -21,8 +21,8 @@ module.exports = {
       resolve: {
         alias: [
           {
-            find: '@rewind-ui/core',
-            replacement: path.resolve(__dirname, '../../../packages/core/'),
+            find: 'ts-rus-ui',
+            replacement: path.resolve(__dirname, '../src/'),
           },
         ],
       },

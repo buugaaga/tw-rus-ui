@@ -72,7 +72,7 @@ export default [
       preserveDirectives(),
       terser({ compress: { directives: false } }),
       copy({
-        targets: [{ src: './../../README.md', dest: 'dist' }],
+        targets: [{ src: './README.md', dest: 'dist' }],
       }),
       tscAlias(),
     ],
