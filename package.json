@@ -1,7 +1,7 @@
 {
   "name": "tw-rus-ui",
   "description": "библиотека компонентов для использования в nextjs приложениях применяя Tailwind CSS.",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "author": {
     "name": "Eldar Nasyrov",
