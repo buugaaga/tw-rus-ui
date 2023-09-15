@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Meta, Story } from "@storybook/react";
-import { MagnifyingGlass } from "@phosphor-icons/react";
-import { EnhancedView, View, ViewGroup } from "../components/View";
+import * as React from 'react';
+import { Meta, Story, StoryFn } from '@storybook/react';
+import { MagnifyingGlass } from '@phosphor-icons/react';
+import { EnhancedView, View, ViewGroup } from '../components/View';
 import {
   Button,
   ButtonVariant,
@@ -11,66 +11,66 @@ import {
   ButtonSize,
   ButtonTone,
   ButtonProps,
-} from "tw-rus-ui";
+} from 'tw-rus-ui';
 
 const variants: ButtonVariant[] = [
-  "primary",
-  "secondary",
-  "tertiary",
-  "link",
-  "danger",
-  "success",
-  "warning",
-  "info",
+  'primary',
+  'secondary',
+  'tertiary',
+  'link',
+  'danger',
+  'success',
+  'warning',
+  'info',
 ];
 
 const colors: ButtonColor[] = [
-  "white",
-  "blue",
-  "red",
-  "green",
-  "yellow",
-  "purple",
-  "gray",
-  "dark",
-  "black",
+  'white',
+  'blue',
+  'red',
+  'green',
+  'yellow',
+  'purple',
+  'gray',
+  'dark',
+  'black',
 ];
-const tones: ButtonTone[] = ["solid", "light", "outline", "transparent"];
-const sizes: ButtonSize[] = ["xs", "sm", "md", "lg"];
-const radiuses: ButtonRadius[] = ["none", "sm", "md", "lg", "full"];
-const shadows: ButtonShadow[] = ["none", "sm", "base", "md", "lg", "xl"];
+const tones: ButtonTone[] = ['solid', 'light', 'outline', 'transparent'];
+const sizes: ButtonSize[] = ['xs', 'sm', 'md', 'lg'];
+const radiuses: ButtonRadius[] = ['none', 'sm', 'md', 'lg', 'full'];
+const shadows: ButtonShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
 
 const meta: Meta = {
-  title: "Components/Button",
+  title: 'Components/Button',
   component: Button,
   argTypes: {
     tone: {
       options: tones,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     variant: {
       options: variants,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     color: {
       options: colors,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     size: {
       options: sizes,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     radius: {
       options: radiuses,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     shadow: {
       options: shadows,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     shadowColor: {
       options: colors,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
   },
   parameters: {
@@ -83,7 +83,7 @@ const meta: Meta = {
 
 export default meta;
 
-const DefaultTemplate: Story<ButtonProps> = (args) => {
+const DefaultTemplate: StoryFn<ButtonProps> = (args) => {
   return (
     <EnhancedView prop="Default">
       <Button {...args}>Button</Button>
@@ -97,12 +97,7 @@ const VariantTemplate: Story<ButtonProps> = (args) => {
   const items = variants.map((variant) => (
     <React.Fragment key={variant}>
       <View prop="variant" value={variant}>
-        <Button
-          {...args}
-          key={variant}
-          variant={variant}
-          className="capitalize"
-        >
+        <Button {...args} key={variant} variant={variant} className="capitalize">
           {variant}
         </Button>
       </View>
@@ -119,13 +114,7 @@ const ColorTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={color}>
       <View prop="color" value={color}>
         {tones.map((tone) => (
-          <Button
-            {...args}
-            key={tone}
-            color={color}
-            tone={tone}
-            className="capitalize"
-          >
+          <Button {...args} key={tone} color={color} tone={tone} className="capitalize">
             {tone}
           </Button>
         ))}
@@ -143,13 +132,7 @@ const ToneTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={tone}>
       <View prop="tone" value={tone}>
         {colors.map((color) => (
-          <Button
-            {...args}
-            key={color}
-            color={color}
-            tone={tone}
-            className="capitalize"
-          >
+          <Button {...args} key={color} color={color} tone={tone} className="capitalize">
             {color}
           </Button>
         ))}
@@ -167,13 +150,7 @@ const SizeTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={size}>
       <View prop="size" value={size}>
         {tones.map((tone) => (
-          <Button
-            {...args}
-            key={tone}
-            size={size}
-            tone={tone}
-            className="capitalize"
-          >
+          <Button {...args} key={tone} size={size} tone={tone} className="capitalize">
             Button
           </Button>
         ))}
@@ -191,13 +168,7 @@ const RadiusTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={radius}>
       <View prop="radius" value={radius}>
         {tones.map((tone) => (
-          <Button
-            {...args}
-            key={tone}
-            radius={radius}
-            tone={tone}
-            className="capitalize"
-          >
+          <Button {...args} key={tone} radius={radius} tone={tone} className="capitalize">
             Button
           </Button>
         ))}
@@ -215,13 +186,7 @@ const ShadowTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={shadow}>
       <View prop="shadow" value={shadow}>
         {tones.map((tone) => (
-          <Button
-            {...args}
-            key={tone}
-            shadow={shadow}
-            tone={tone}
-            className="capitalize"
-          >
+          <Button {...args} key={tone} shadow={shadow} tone={tone} className="capitalize">
             Button
           </Button>
         ))}
@@ -264,14 +229,7 @@ const StatesTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={tone}>
       <View prop="tone" value={tone}>
         {colors.map((color) => (
-          <Button
-            {...args}
-            key={color}
-            color={color}
-            tone={tone}
-            className="capitalize"
-            disabled
-          >
+          <Button {...args} key={color} color={color} tone={tone} className="capitalize" disabled>
             {color}
           </Button>
         ))}
@@ -283,14 +241,7 @@ const StatesTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={tone}>
       <View prop="tone" value={tone}>
         {colors.map((color) => (
-          <Button
-            {...args}
-            key={color}
-            color={color}
-            tone={tone}
-            className="capitalize"
-            loading
-          >
+          <Button {...args} key={color} color={color} tone={tone} className="capitalize" loading>
             {color}
           </Button>
         ))}
@@ -300,10 +251,10 @@ const StatesTemplate: Story<ButtonProps> = (args) => {
 
   return (
     <ViewGroup>
-      <View prop="disabled" value={"true"}>
+      <View prop="disabled" value={'true'}>
         {disabledItems}
       </View>
-      <View prop="loading" value={"true"}>
+      <View prop="loading" value={'true'}>
         {loadingItems}
       </View>
     </ViewGroup>
@@ -317,15 +268,8 @@ const IconTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={color}>
       <View prop="color" value={color}>
         {tones.map((tone) => (
-          <Button
-            {...args}
-            key={tone}
-            color={color}
-            tone={tone}
-            className="capitalize"
-            icon
-          >
-            <MagnifyingGlass className={"w-3.5 h-3.5"} />
+          <Button {...args} key={tone} color={color} tone={tone} className="capitalize" icon>
+            <MagnifyingGlass className={'w-3.5 h-3.5'} />
           </Button>
         ))}
       </View>
@@ -342,13 +286,7 @@ const LabelWithIconTemplate: Story<ButtonProps> = (args) => {
     <React.Fragment key={color}>
       <View prop="color" value={color}>
         {tones.map((tone) => (
-          <Button
-            {...args}
-            key={tone}
-            color={color}
-            tone={tone}
-            className="capitalize"
-          >
+          <Button {...args} key={tone} color={color} tone={tone} className="capitalize">
             <MagnifyingGlass className="mr-2 w-4 h-4" />
             Search
           </Button>

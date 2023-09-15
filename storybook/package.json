@@ -32,5 +32,10 @@
     "typescript": "^4.9.5",
     "vite": "^4.4.7"
   },
-  "workspaces": ["storybook"]
+  "prettier": {
+    "printWidth": 100,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
 }
