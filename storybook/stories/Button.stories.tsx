@@ -86,7 +86,7 @@ export default meta;
 const DefaultTemplate: StoryFn<ButtonProps> = (args) => {
   return (
     <EnhancedView prop="Default">
-      <Button {...args}>Button</Button>
+      <Button>Button</Button>
     </EnhancedView>
   );
 };
@@ -94,10 +94,10 @@ const DefaultTemplate: StoryFn<ButtonProps> = (args) => {
 export const Default = DefaultTemplate.bind({});
 
 const VariantTemplate: Story<ButtonProps> = (args) => {
-  const items = variants.map((variant) => (
+  const items = variants.reverse().map((variant) => (
     <React.Fragment key={variant}>
       <View prop="variant" value={variant}>
-        <Button {...args} key={variant} variant={variant} className="capitalize">
+        <Button {...args} key={variant} variant={variant} className="capitalize" withRing>
           {variant}
         </Button>
       </View>

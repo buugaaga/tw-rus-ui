@@ -15,6 +15,9 @@ const base = cva(
     'data-[has-left-element=true]:h-auto',
     'data-[has-right-element=true]:h-auto',
     'focus:z-20',
+    'transform',
+    'active:scale-90',
+    'transition-transform',
   ],
   {
     variants: {
@@ -276,7 +279,7 @@ const base = cva(
         color: 'green',
         className: [
           'text-white',
-          'bg-green-500',
+          'bg-green-400',
           'focus:bg-green-600',
           'hover:bg-green-600',
           'active:bg-green-600/90',
@@ -294,6 +297,7 @@ const base = cva(
           'hover:bg-yellow-500',
           'active:bg-yellow-500/90',
           'disabled:bg-yellow-200',
+          'disabled:text-gray-400',
           'disabled:hover:bg-yellow-200',
         ],
       },

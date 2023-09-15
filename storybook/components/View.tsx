@@ -29,24 +29,28 @@ export const EnhancedView = ({ prop, value = '', ...props }) => {
     <div className="flex flex-col border divide-y divide-gray-200 rounded-lg shadow-sm">
       <div className="flex space-x-2 items-center bg-gray-100/75 text-gray-800 p-2.5">
         {prop}
-        {value && <Badge>{value}</Badge>}
+        {/* {value && <Badge>{value}</Badge>} */}
       </div>
       <div className="flex flex-wrap">
         <div className="flex flex-col min-w-[250px] border divide-y divide-gray-200 rounded m-2.5 text-sm ">
-          <span className="font-medium p-1.5">Props</span>
-          {Object.keys(rest).map((prop) => (
-            <div key={prop} className="flex items-center space-x-0 p-1.5">
-              <div className="text-gray-500">{prop}</div>
-              {typeof rest[prop] === 'string' && (
-                <div className="text-gray-800">
-                  <Badge>{rest[prop]}</Badge>
-                </div>
-              )}
-            </div>
-          ))}
-          {!Object.keys(rest).length && (
-            <span className="text-gray-700 p-1.5">No properties selected</span>
-          )}
+          {/* <span className="font-medium p-1.5">Props</span> */}
+          {
+            // Object.keys(rest).map((prop) => (
+            //   <div key={prop} className="flex items-center space-x-0 p-1.5">
+            //     <div className="text-gray-500">{prop}</div>
+            //     {typeof rest[prop] === 'string' && (
+            //       <div className="text-gray-800">
+            //         <Badge>{rest[prop]}</Badge>
+            //       </div>
+            //     )}
+            //   </div>
+            // ))
+          }
+          {
+            // !Object.keys(rest).length && (
+            //   <span className="text-gray-700 p-1.5">No properties selected</span>
+            // )
+          }
         </div>
         <div className=" bg-gray-50/50 flex-1 p-2.5">{props.children}</div>
       </div>

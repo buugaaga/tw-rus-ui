@@ -64,3 +64,5 @@ type PolymorphicButtonComponent = <C extends ElementType = 'button'>(
 export type ButtonComponent = PolymorphicButtonComponent & {
   displayName?: string;
 };
+
+export type ButtonContainerElement = HTMLButtonElement | HTMLAnchorElement;

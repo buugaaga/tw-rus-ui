@@ -7,13 +7,13 @@ import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
-import { ButtonComponent, ButtonProps } from './Button.types';
-import { ElementType, forwardRef, useMemo } from 'react';
+import { ButtonComponent, ButtonContainerElement, ButtonProps } from './Button.types';
+import { ElementType, forwardRef, MouseEvent, useCallback, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<ButtonProps> = {
   animation: 'none',
-  color: 'dark',
+  color: 'gray',
   disabled: false,
   icon: false,
   loading: false,
@@ -90,6 +90,7 @@ const Button: ButtonComponent = forwardRef(
       theme,
       tone,
       withRing,
+      variant,
     ]);
     const chevronClasses = withChevron ? theme.chevron({ open, size, chevronRotation }) : '';
     const spinnerClasses = loading ? theme.spinner({ size }) : '';
@@ -103,7 +104,7 @@ const Button: ButtonComponent = forwardRef(
         id={id}
         ref={ref}
         type={type}
-        className={classes}
+        className={`${classes}`}
         disabled={disabled || loading}
         aria-disabled={disabled || loading}
         {...additionalProps}
