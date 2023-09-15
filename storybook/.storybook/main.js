@@ -21,8 +21,8 @@ module.exports = {
       resolve: {
         alias: [
           {
-            find: 'ts-rus-ui',
-            replacement: path.resolve(__dirname, '../'),
+            find: 'tw-rus-ui',
+            replacement: path.resolve(__dirname, '../../'),
           },
         ],
       },

@@ -288,7 +288,7 @@ const base = cva(
         tone: 'solid',
         color: 'yellow',
         className: [
-          'text-white',
+          'text-gray-800',
           'bg-yellow-400',
           'focus:bg-yellow-500',
           'hover:bg-yellow-500',
