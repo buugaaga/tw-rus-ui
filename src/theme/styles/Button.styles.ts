@@ -16,7 +16,7 @@ const base = cva(
     'data-[has-right-element=true]:h-auto',
     'focus:z-20',
     'transform',
-    'active:scale-90',
+    'active:scale-95',
     'transition-transform',
   ],
   {

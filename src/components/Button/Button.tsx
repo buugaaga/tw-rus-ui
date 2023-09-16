@@ -7,8 +7,8 @@ import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
-import { ButtonComponent, ButtonContainerElement, ButtonProps } from './Button.types';
-import { ElementType, forwardRef, MouseEvent, useCallback, useMemo, useState } from 'react';
+import { ButtonComponent, ButtonProps } from './Button.types';
+import { ElementType, forwardRef, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<ButtonProps> = {
