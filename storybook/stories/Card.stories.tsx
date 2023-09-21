@@ -1,51 +1,44 @@
-import {
-  Card,
-  CardColor,
-  CardProps,
-  CardRadius,
-  CardShadow,
-  CardSize,
-} from "tw-rus-ui";
-import * as React from "react";
-import { Meta, Story } from "@storybook/react";
-import { EnhancedView, View, ViewGroup } from "../components/View";
+import { Card, CardColor, CardProps, CardRadius, CardShadow, CardSize } from 'tw-rus-ui';
+import * as React from 'react';
+import { Meta, Story } from '@storybook/react';
+import { EnhancedView, View, ViewGroup } from '../components/View';
 
-const colors: CardColor[] = ["white", "gray", "zinc", "slate"];
-const shadows: CardShadow[] = ["none", "sm", "base", "md", "lg", "xl"];
-const radiuses: CardRadius[] = ["none", "sm", "base", "md", "lg"];
-const sizes: CardSize[] = ["sm", "base", "md", "lg"];
-const headerText = "Header";
+const colors: CardColor[] = ['white', 'gray', 'zinc', 'slate'];
+const shadows: CardShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
+const radiuses: CardRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
+const sizes: CardSize[] = ['sm', 'base', 'md', 'lg'];
+const headerText = 'Header';
 const bodyText =
-  "Rewind UI is a React component library that provides a set of accessible, reusable, and customizable components to help you build your next project. We've designed our components to be flexible and easy to use, so you can focus on what matters most: building great user experiences.";
-const footerText = "Footer";
+  "tw-rus-ui is a React component library that provides a set of accessible, reusable, and customizable components to help you build your next project. We've designed our components to be flexible and easy to use, so you can focus on what matters most: building great user experiences.";
+const footerText = 'Footer';
 const imgSrc =
-  "https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4140&q=80";
+  'https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4140&q=80';
 
 const meta: Meta = {
-  title: "Components/Card",
+  title: 'Components/Card',
   component: Card,
   argTypes: {
     radius: {
       options: radiuses,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     color: {
       options: colors,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     shadow: {
       options: shadows,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     size: {
       options: sizes,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     bordered: {
-      control: { type: "boolean" },
+      control: { type: 'boolean' },
     },
     withDivider: {
-      control: { type: "boolean" },
+      control: { type: 'boolean' },
     },
     ref: {
       table: {
@@ -54,7 +47,7 @@ const meta: Meta = {
     },
   },
   parameters: {
-    controls: { expanded: true, sort: "alpha" },
+    controls: { expanded: true, sort: 'alpha' },
   },
 };
 
@@ -190,11 +183,7 @@ const ImageTemplate: Story<CardProps> = (args) => {
   return (
     <View prop="bordered" value="true">
       <Card {...args} bordered={true}>
-        <Card.Image
-          src={imgSrc}
-          caption="This is a beautiful image"
-          mode="dark"
-        ></Card.Image>
+        <Card.Image src={imgSrc} caption="This is a beautiful image" mode="dark"></Card.Image>
         <Card.Body>{bodyText}</Card.Body>
       </Card>
     </View>

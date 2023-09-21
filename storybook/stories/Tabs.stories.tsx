@@ -1,85 +1,68 @@
-import {
-  Card,
-  Tabs,
-  TabsColor,
-  TabsProps,
-  TabsRadius,
-  TabsSize,
-  TabsTone,
-} from "tw-rus-ui";
-import * as React from "react";
-import { Meta, Story } from "@storybook/react";
-import { EnhancedView, View, ViewGroup } from "../components/View";
-import { HandWaving, Sparkle, Info, Lifebuoy } from "@phosphor-icons/react";
+import { Card, Tabs, TabsColor, TabsProps, TabsRadius, TabsSize, TabsTone } from 'tw-rus-ui';
+import * as React from 'react';
+import { Meta, Story } from '@storybook/react';
+import { EnhancedView, View, ViewGroup } from '../components/View';
+import { HandWaving, Sparkle, Info, Lifebuoy } from '@phosphor-icons/react';
 
-const colors: TabsColor[] = [
-  "blue",
-  "red",
-  "green",
-  "yellow",
-  "purple",
-  "gray",
-  "dark",
-  "black",
-];
-const tones: TabsTone[] = ["line", "pill"];
-const sizes: TabsSize[] = ["sm", "md", "lg"];
-const radiuses: TabsRadius[] = ["none", "sm", "base", "md", "lg", "full"];
+const colors: TabsColor[] = ['blue', 'red', 'green', 'yellow', 'purple', 'gray', 'dark', 'black'];
+const tones: TabsTone[] = ['line', 'pill'];
+const sizes: TabsSize[] = ['sm', 'md', 'lg'];
+const radiuses: TabsRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
 
 const tabs = [
   {
-    anchor: "tab-1",
-    label: "Introduction",
+    anchor: 'tab-1',
+    label: 'Introduction',
     icon: <HandWaving weight="duotone" className="text-blue-500" />,
     content:
-      "Rewind UI is a React component library that provides a set of accessible, reusable, and customizable components to help you build your next project. We've designed our components to be flexible and easy to use, so you can focus on what matters most: building great user experiences.",
+      "tw-rus-ui is a React component library that provides a set of accessible, reusable, and customizable components to help you build your next project. We've designed our components to be flexible and easy to use, so you can focus on what matters most: building great user experiences.",
   },
   {
-    anchor: "tab-2",
-    label: "Getting started",
+    anchor: 'tab-2',
+    label: 'Getting started',
     icon: <Sparkle weight="duotone" className="text-blue-500" />,
     content:
-      "Getting started with Rewind UI is easy! Simply install the package using your package manager of choice, and you're ready to go. We've also included a set of Storybook stories to help you get familiar with our components and how to use them.",
+      "Getting started with tw-rus-ui is easy! Simply install the package using your package manager of choice, and you're ready to go. We've also included a set of Storybook stories to help you get familiar with our components and how to use them.",
   },
   {
-    anchor: "tab-3",
-    label: "Contribute",
+    anchor: 'tab-3',
+    label: 'Contribute',
     icon: <Lifebuoy weight="duotone" className="text-blue-500" />,
     content:
-      "We're always looking for new contributors to help us improve Rewind UI! If you'd like to contribute, please check out our contribution guidelines to get started. We're looking forward to working with you!",
+      "We're always looking for new contributors to help us improve tw-rus-ui UI! If you'd like to contribute, please check out our contribution guidelines to get started. We're looking forward to working with you!",
   },
   {
-    anchor: "tab-4",
-    label: "Information",
+    anchor: 'tab-4',
+    label: 'Information',
     icon: <Info weight="duotone" className="text-blue-500" />,
     content:
-      "If you'd like to learn more about Rewind UI, please visit our website. You can also follow us on Twitter to stay up to date with the latest news and updates.",
+      "If you'd like to learn more about tw-rus-ui, please visit our website. You can also follow us on Twitter to stay up to date with the latest news and updates.",
   },
 ];
 
 const meta: Meta = {
-  title: "Components/Tabs",
+  title: 'Components/Tabs',
   component: Tabs,
   argTypes: {
     color: {
       options: colors,
-      control: { type: "radio" },
+      control: { type: 'radio' },
     },
     tone: {
       options: tones,
-      control: { type: "radio" },
+      control: { type: 'radio' },
     },
     size: {
       options: sizes,
-      control: { type: "radio" },
+      control: { type: 'radio' },
     },
     radius: {
       options: radiuses,
-      control: { type: "select" },
+      control: { type: 'select' },
     },
     fullWidth: {
       options: [true, false],
-      control: { type: "boolean" },
+      control: { type: 'boolean' },
     },
     ref: {
       table: {
@@ -89,13 +72,13 @@ const meta: Meta = {
   },
   parameters: {
     backgrounds: {
-      default: "gray",
+      default: 'gray',
       values: [
-        { name: "gray", value: "#f8fafc" },
-        { name: "dark", value: "#334155" },
+        { name: 'gray', value: '#f8fafc' },
+        { name: 'dark', value: '#334155' },
       ],
     },
-    controls: { expanded: true, sort: "alpha" },
+    controls: { expanded: true, sort: 'alpha' },
   },
 };
 
@@ -130,13 +113,7 @@ const ColorTemplate: Story<TabsProps> = (args) => {
     <React.Fragment key={color}>
       <View prop="color" value={color}>
         {tones.map((tone) => (
-          <Tabs
-            key={tone}
-            {...args}
-            tone={tone}
-            color={color}
-            defaultTab="tab-1"
-          >
+          <Tabs key={tone} {...args} tone={tone} color={color} defaultTab="tab-1">
             <Tabs.List>
               {tabs.map((tab) => (
                 <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -166,13 +143,7 @@ const ToneTemplate: Story<TabsProps> = (args) => {
     <React.Fragment key={tone}>
       <View prop="tone" value={tone}>
         {colors.map((color) => (
-          <Tabs
-            key={color}
-            {...args}
-            tone={tone}
-            color={color}
-            defaultTab="tab-1"
-          >
+          <Tabs key={color} {...args} tone={tone} color={color} defaultTab="tab-1">
             <Tabs.List>
               {tabs.map((tab) => (
                 <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -257,16 +228,10 @@ export const Radiuses = RadiusTemplate.bind({});
 
 const FullWidthTemplate: Story<TabsProps> = (args) => {
   const items = [true, false].map((fullWidth) => (
-    <React.Fragment key={fullWidth ? "1" : "2"}>
-      <View prop="fullWidth" value={fullWidth ? "true" : "false"}>
+    <React.Fragment key={fullWidth ? '1' : '2'}>
+      <View prop="fullWidth" value={fullWidth ? 'true' : 'false'}>
         {tones.map((tone) => (
-          <Tabs
-            key={tone}
-            {...args}
-            tone={tone}
-            fullWidth={fullWidth}
-            defaultTab="tab-1"
-          >
+          <Tabs key={tone} {...args} tone={tone} fullWidth={fullWidth} defaultTab="tab-1">
             <Tabs.List>
               {tabs.map((tab) => (
                 <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -335,11 +300,7 @@ const ExampleTemplate: Story<TabsProps> = (args) => {
               </Tabs.List>
 
               {tabs.map((tab) => (
-                <Tabs.Content
-                  key={`content-${tab.anchor}`}
-                  anchor={tab.anchor}
-                  className="p-5"
-                >
+                <Tabs.Content key={`content-${tab.anchor}`} anchor={tab.anchor} className="p-5">
                   {tab.content}
                 </Tabs.Content>
               ))}
