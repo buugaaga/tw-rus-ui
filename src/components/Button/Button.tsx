@@ -6,12 +6,12 @@ import { ChevronDownIcon } from '@icons/ChevronDown';
 import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
-import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
-import { ButtonComponent, ButtonProps } from './Button.types';
+import { PolymorphicRef } from '../../types';
+import { ButtonComponentType, ButtonInnerProps, ButtonProps } from './Button.types';
 import { ElementType, forwardRef, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const defaultProps: Partial<ButtonProps> = {
+const defaultProps: Partial<ButtonInnerProps> = {
   animation: 'none',
   color: 'gray',
   disabled: false,
@@ -25,12 +25,9 @@ const defaultProps: Partial<ButtonProps> = {
   withRing: true,
 };
 
-const Button: ButtonComponent = forwardRef(
-  <C extends ElementType = 'button'>(
-    props: PolymorphicComponentProp<C, ButtonProps>,
-    ref?: PolymorphicRef<C>
-  ) => {
-    const variantProps = useComponentVariant('Button', props.variant) as Partial<ButtonProps>;
+const Button: ButtonComponentType = forwardRef(
+  <C extends ElementType = 'button'>(props: ButtonProps<C>, ref?: PolymorphicRef<C>) => {
+    const variantProps = useComponentVariant('Button', props.variant) as Partial<ButtonInnerProps>;
     const theme = useComponentTheme('Button');
     const {
       animation,

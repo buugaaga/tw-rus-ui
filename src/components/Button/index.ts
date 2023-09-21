@@ -1,6 +1,7 @@
 export { default as Button } from './Button';
 export type {
   ButtonProps,
+  ButtonInnerProps,
   ButtonColor,
   ButtonRadius,
   ButtonShadow,

@@ -1,5 +1,5 @@
 import { ElementType, ReactElement } from 'react';
-import { PolymorphicComponentPropWithRef } from '../../types';
+import { PolymorphicComponentProp, PolymorphicComponentPropWithRef } from '../../types';
 
 export type ButtonAnimation = 'none' | 'pulse' | 'bounce';
 export type ButtonColor =
@@ -37,7 +37,7 @@ export type ButtonVariant =
   | 'warning'
   | 'info';
 
-export type ButtonProps = {
+export type ButtonInnerProps = {
   animation?: ButtonAnimation;
   color?: ButtonColor;
   disabled?: boolean;
@@ -54,15 +54,20 @@ export type ButtonProps = {
 
 type PolymorphicButtonProps<C extends ElementType> = PolymorphicComponentPropWithRef<
   C,
-  ButtonProps
+  ButtonInnerProps
 >;
 
 type PolymorphicButtonComponent = <C extends ElementType = 'button'>(
   props: PolymorphicButtonProps<C>
 ) => ReactElement | null;
 
-export type ButtonComponent = PolymorphicButtonComponent & {
+export type ButtonComponentType = PolymorphicButtonComponent & {
   displayName?: string;
 };
 
 export type ButtonContainerElement = HTMLButtonElement | HTMLAnchorElement;
+
+export type ButtonProps<C extends ElementType = 'button'> = PolymorphicComponentProp<
+  C,
+  ButtonInnerProps
+>;
