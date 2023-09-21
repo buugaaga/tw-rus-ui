@@ -1,2 +1,0 @@
-import{a as e,j as o}from"./usePropId-d72ac371.js";const t=({className:s})=>e("svg",Object.assign({className:s,xmlns:"http://www.w3.org/2000/svg",width:"88",height:"88",viewBox:"0 0 24 24",strokeWidth:"1.5",stroke:"currentColor",fill:"none",strokeLinecap:"round",strokeLinejoin:"round"},{children:[o("path",{stroke:"none",d:"M0 0h24v24H0z",fill:"none"}),o("polyline",{points:"6 9 12 15 18 9"})]}));export{t as n};
-//# sourceMappingURL=ChevronDown-d155685d.js.map
