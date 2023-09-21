@@ -1,5 +1,5 @@
 import { ElementType, ReactElement } from 'react';
-import { PolymorphicComponentPropWithRef } from '../../types';
+import { PolymorphicComponentProp, PolymorphicComponentPropWithRef } from '../../types';
 
 export type TextColor =
   | 'white'
@@ -53,7 +53,7 @@ export type TextWeight =
   | 'extraBold'
   | 'black';
 
-export type TextProps = {
+export type TextInnerProps = {
   color?: TextColor;
   leading?: TextLeading;
   size?: TextSize;
@@ -62,10 +62,15 @@ export type TextProps = {
   weight?: TextWeight;
 };
 
-type PolymorphicTextProps<C extends ElementType> = PolymorphicComponentPropWithRef<C, TextProps>;
+type PolymorphicTextProps<C extends ElementType> = PolymorphicComponentPropWithRef<
+  C,
+  TextInnerProps
+>;
 
 type PolymorphicTextComponent = <C extends ElementType = 'span'>(
   props: PolymorphicTextProps<C>
 ) => ReactElement | null;
 
 export type TextComponent = PolymorphicTextComponent & { displayName?: string };
+
+export type TextProps<C extends ElementType = 'span'> = PolymorphicComponentProp<C, TextInnerProps>;

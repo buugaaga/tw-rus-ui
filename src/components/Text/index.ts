@@ -1,6 +1,7 @@
 export { default as Text } from './Text';
 export type {
-  TextProps,
+  // TextProps,
+  TextInnerProps,
   TextColor,
   TextSize,
   TextWeight,

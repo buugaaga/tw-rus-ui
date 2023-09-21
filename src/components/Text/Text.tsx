@@ -3,10 +3,10 @@ import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import { ElementType, forwardRef, useMemo } from 'react';
-import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
-import { TextComponent, TextProps } from './Text.types';
+import { PolymorphicRef } from '../../types';
+import { TextComponent, TextInnerProps, TextProps } from './Text.types';
 
-const defaultProps: Partial<TextProps> = {
+const defaultProps: Partial<TextInnerProps> = {
   color: 'dark',
   leading: 'normal',
   size: 'base',
@@ -15,11 +15,8 @@ const defaultProps: Partial<TextProps> = {
 };
 
 const Text: TextComponent = forwardRef(
-  <C extends ElementType = 'span'>(
-    props: PolymorphicComponentProp<C, TextProps>,
-    ref?: PolymorphicRef<C>
-  ) => {
-    const variantProps = useComponentVariant('Text', props.variant) as Partial<TextProps>;
+  <C extends ElementType = 'span'>(props: TextProps<C>, ref?: PolymorphicRef<C>) => {
+    const variantProps = useComponentVariant('Text', props.variant) as Partial<TextInnerProps>;
     const theme = useComponentTheme('Text');
     const {
       as,
