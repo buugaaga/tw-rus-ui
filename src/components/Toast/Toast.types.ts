@@ -1,55 +1,34 @@
-import { ComponentPropsWithRef, ForwardRefExoticComponent } from 'react';
+import { Toast, ToasterProps as HotToasterProps } from 'react-hot-toast';
 
-export type ToastAction = {
-  label: string;
-  onClick: () => void;
-  primary?: boolean;
-};
-export type ToastColor =
-  | 'white'
-  | 'blue'
-  | 'red'
-  | 'green'
-  | 'yellow'
-  | 'purple'
-  | 'gray'
-  | 'dark'
-  | 'black';
-export type ToastIconType = 'info' | 'success' | 'warning' | 'error' | 'question';
-export type ToastRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
-export type ToastShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
-export type ToastShadowColor =
-  | 'none'
-  | 'white'
-  | 'blue'
-  | 'red'
-  | 'green'
-  | 'yellow'
-  | 'purple'
-  | 'gray'
-  | 'dark'
-  | 'black';
-export type ToastTone = 'solid' | 'light';
-export type ToastVariant = 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info';
+type ToastType = Toast;
 
-export interface ToastProps extends Omit<ComponentPropsWithRef<'div'>, 'size'> {
-  actions?: ToastAction[];
-  closeOnClick?: boolean;
-  color?: ToastColor;
-  description?: string;
-  duration?: number;
-  halted?: boolean;
-  iconType?: ToastIconType;
-  pauseOnHover?: boolean;
-  radius?: ToastRadius;
-  shadow?: ToastShadow;
-  shadowColor?: ToastShadowColor;
-  showProgress?: boolean;
-  title?: string;
-  tone?: ToastTone;
-  variant?: ToastVariant;
-}
+type Renderable = JSX.Element | string | null;
 
-export type ToastComponent = ForwardRefExoticComponent<ToastProps> & {
-  displayName?: string;
-};
+type ValueFunction<TValue, TArg> = (arg: TArg) => TValue;
+
+type ValueOrFunction<TValue, TArg> = TValue | ValueFunction<TValue, TArg>;
+
+type Message = ValueOrFunction<Renderable, Toast>;
+
+type ToastMessage = Message;
+
+export type PromiseToastHandler<T = any> = (
+  promise: Promise<T>,
+  msgs: {
+    loading: Renderable;
+    success: ValueOrFunction<Renderable, T>;
+    error: ValueOrFunction<Renderable, any>;
+  },
+  opts?: ToastOptions
+) => Promise<T>;
+
+export type ToastOptions = Partial<
+  Pick<
+    ToastType,
+    'id' | 'icon' | 'duration' | 'ariaProps' | 'className' | 'style' | 'position' | 'iconTheme'
+  >
+>;
+
+export type ToastHandler = (message: ToastMessage, options?: ToastOptions) => string;
+
+export type ToasterProps = HotToasterProps;

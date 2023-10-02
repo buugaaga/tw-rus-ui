@@ -1,7 +1,7 @@
 {
   "name": "tw-rus-ui",
   "description": "библиотека компонентов для использования в nextjs приложениях применяя Tailwind CSS.",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "license": "MIT",
   "author": {
     "name": "Eldar Nasyrov",
@@ -77,6 +77,7 @@
     "@floating-ui/react-dom": "^2.0.1",
     "@tailwindcss/forms": "^0.5.5",
     "class-variance-authority": "^0.4.0",
+    "react-hot-toast": "^2.4.1",
     "tailwind-merge": "^1.14.0",
     "tailwind-scrollbar": "^2.1.0"
   },

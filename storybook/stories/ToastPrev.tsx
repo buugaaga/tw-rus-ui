@@ -1,28 +1,27 @@
-import {
-  Button,
-  useToast,
-  Toaster,
-  // Toast,
-  // useToast,
-  // ToastPosition,
-  // ToastColor,
-  // ToastTone,
-  // ButtonProps,
-  // ToastProps,
-  // ToastRadius,
-  // ToastShadow,
-  // ToastVariant,
-  // AlertProps,
-  // Alert,
-} from 'tw-rus-ui';
-import { useEffect } from 'react';
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { View, ViewGroup } from '../components/View';
+// import {
+//   Button,
+//   Toast,
+//   useToast,
+//   // ToastPosition,
+//   ToastColor,
+//   ToastTone,
+//   ButtonProps,
+//   ToastProps,
+//   ToastRadius,
+//   ToastShadow,
+//   ToastVariant,
+//   AlertProps,
+//   Alert,
+// } from 'tw-rus-ui';
+// import { useEffect } from 'react';
+// import * as React from 'react';
+// import { Meta, Story } from '@storybook/react';
+// import { View, ViewGroup } from '../components/View';
 
-const positions = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+export const hi = 'hi';
+// const positions = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
 
-// ToastPosition[] =
+// // ToastPosition[] =
 // const colors: ToastColor[] = [
 //   'white',
 //   'blue',
@@ -39,68 +38,72 @@ const positions = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
 // const shadows: ToastShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
 // const variants: ToastVariant[] = ['primary', 'secondary', 'danger', 'success', 'warning', 'info'];
 
-const Toast = () => {
-  return <div>toast</div>;
-};
+// const actions = [
+//   {
+//     label: 'Cancel',
+//     onClick: () => {
+//       console.log('Clicked close');
+//     },
+//     primary: false,
+//   },
+//   {
+//     label: 'Delete',
+//     onClick: () => {
+//       console.log('Clicked save');
+//     },
+//     primary: true,
+//   },
+// ];
 
-const meta: Meta = {
-  title: 'Components/Toast',
-  component: Toast,
-  argTypes: {
-    position: {
-      options: positions,
-      control: { type: 'select' },
-    },
-    max: {
-      control: { type: 'number' },
-    },
-    ref: {
-      table: {
-        disable: true,
-      },
-    },
-  },
-};
+// const meta: Meta = {
+//   title: 'Components/Toast',
+//   component: Toast,
+//   argTypes: {
+//     position: {
+//       options: positions,
+//       control: { type: 'select' },
+//     },
+//     max: {
+//       control: { type: 'number' },
+//     },
+//     ref: {
+//       table: {
+//         disable: true,
+//       },
+//     },
+//   },
+// };
 
-export default meta;
+// export default meta;
 
-const DefaultTemplate: Story<any> = (args) => {
-  const { successToast, errorToast, loadingToast } = useToast();
+// const DefaultTemplate: Story<any> = (args) => {
+//   const [counter, setCounter] = React.useState(0);
+//   const toast = useToast();
 
-  return (
-    <>
-      <View prop="Default">
-        <Button
-          onClick={
-            () => successToast('success')
-            // () => setCounter((prev) => prev + 1)
-          }
-        >
-          success
-        </Button>
-        <Button
-          onClick={
-            () => errorToast('error')
-            // () => setCounter((prev) => prev + 1)
-          }
-        >
-          error
-        </Button>
-        <Button
-          onClick={
-            () => loadingToast('loading')
-            // () => setCounter((prev) => prev + 1)
-          }
-        >
-          loading
-        </Button>
-      </View>
-      <Toaster />
-    </>
-  );
-};
+//   useEffect(() => {
+//     if (!counter) {
+//       return;
+//     }
+//     toast.add({
+//       title: 'Are you sure?',
+//       description: 'Do you really want to delete the selected User?',
+//       iconType: 'question',
+//       id: counter.toString(),
+//       duration: 3000,
+//       color: 'green',
+//       actions,
+//     });
+//   }, [counter]);
 
-export const Default = DefaultTemplate.bind({});
+//   return (
+//     <View prop="Default">
+//       <Button onClick={() => setCounter((prev) => prev + 1)}>Add</Button>
+//       <Button onClick={() => toast.clear()}>Clear</Button>
+//     </View>
+//   );
+// };
+
+// export const Default = DefaultTemplate.bind({});
 
 // const VariantTemplate: Story<any> = (args) => {
 //   const items = variants.map((variant) => (
